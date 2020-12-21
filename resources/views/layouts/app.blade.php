@@ -15,7 +15,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Styles -->
-    @include('inc.styles')  
+    @include('inc.styles' , ['diraction'=>config('app.diraction')])  
+    @stack('css')
 </head>
 <body {{ ($has_scrollspy) ? scrollspy($scrollspy_offset) : '' }} class=" {{ ($page_name === 'alt_menu') ? 'alt-menu' : '' }} {{ ($page_name === 'error404') ? 'error404 text-center' : '' }} {{ ($page_name === 'error500') ? 'error500 text-center' : '' }} {{ ($page_name === 'error503') ? 'error503 text-center' : '' }} {{ ($page_name === 'maintenence') ? 'maintanence text-center' : '' }}">
     
@@ -46,7 +47,9 @@
     </div>
     <!-- END MAIN CONTAINER -->
 
-    @include('inc.scripts')
-
+    @include('inc.scripts' , ['diraction'=>config('app.diraction')])
+    <script src="{{ route('translations') }}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
+    @stack('js')
 </body>
 </html>

@@ -34,13 +34,12 @@
                 @if ($category_name != 'starter_kits')
                 <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('storage/img/ca.png')}}" class="flag-width" alt="flag">
+                        <img src="{{asset('storage/img/'.config('app.diraction').'.png')}}" class="flag-width" alt="flag">
                     </a>
+                    
                     <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('storage/img/de.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;German</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('storage/img/jp.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;Japanese</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('storage/img/fr.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;French</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('storage/img/ca.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;English</span></a>
+                        <a class="dropdown-item d-flex" href="{{ route('lang.change', 'rtl') }}">   <img src="{{asset('storage/img/rtl.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;@lang('common.arabic')</span></a>
+                        <a class="dropdown-item d-flex" href="{{ route('lang.change', 'ltr') }}"><img src="{{asset('storage/img/ltr.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;@lang('common.english')</span></a>
                     </div>
                 </li>
 

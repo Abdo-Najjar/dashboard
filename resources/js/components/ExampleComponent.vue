@@ -12,7 +12,12 @@
 import axios from "axios";
 export default {
   mounted() {
-    axios.get("/api/");
+    console.log(translate('common.dashboard'));
+
+
+    // axios.get(route('test')).then(function(data){
+    //   console.log(data.data);
+    // });
   },
 };
 </script>

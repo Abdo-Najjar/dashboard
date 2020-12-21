@@ -1,13 +1,13 @@
-<link href="{{asset('assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
-<script src="{{asset('assets/js/loader.js')}}"></script>
+<link href="{{asset($diraction.'/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
+<script src="{{asset($diraction.'/assets/js/loader.js')}}"></script>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-<link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset($diraction.'/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
 
 @if ($page_name != 'coming_soon' && $page_name != 'contact_us' && $page_name != 'error404' && $page_name != 'error500' && $page_name != 'error503' && $page_name != 'faq' && $page_name != 'helpdesk' && $page_name != 'maintenence' && $page_name != 'privacy' && $page_name != 'auth_boxed' && $page_name != 'auth_default')
-<link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset($diraction.'/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
 @endif
 <!-- END GLOBAL MANDATORY STYLES -->
 
@@ -15,23 +15,23 @@
 @switch($page_name)
     @case('analytics')
       {{-- Dashboard --}}
-<link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('assets/css/dashboard/dash_2.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset($diraction.'/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset($diraction.'/assets/css/dashboard/dash_2.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('sales')
       {{-- Dashboard 2 --}}
-<link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset($diraction.'/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset($diraction.'/assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('calendar')
       {{-- App Calendar --}}
-      <link href="{{asset('plugins/fullcalendar/fullcalendar.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/fullcalendar/custom-fullcalendar.advance.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/flatpickr/flatpickr.css')}}" rel="stylesheet" type="text/css">
-      <link href="{{asset('plugins/flatpickr/custom-flatpickr.css')}}" rel="stylesheet" type="text/css">
-      <link href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/fullcalendar/fullcalendar.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/fullcalendar/custom-fullcalendar.advance.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/flatpickr/flatpickr.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/plugins/flatpickr/custom-flatpickr.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css" />
       <style>
           
           .widget-content-area { border-radius: 6px; margin-bottom: 10px; }
@@ -44,69 +44,69 @@
 
     @case('chat')
       {{-- App chat --}}
-      <link href="{{asset('assets/css/apps/mailing-chat.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/apps/mailing-chat.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('contacts')
       {{-- App contacts --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link href="{{asset('plugins/jquery-ui/jquery-ui.min.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/apps/contacts.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link href="{{asset($diraction.'/plugins/jquery-ui/jquery-ui.min.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/apps/contacts.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('invoice')
       {{-- App invoice --}}
-      <link href="{{asset('assets/css/apps/invoice.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/apps/invoice.css')}}" rel="stylesheet" type="text/css" />
       @break
     
     @case('mailbox')
       {{-- App Mailbox --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/editors/quill/quill.snow.css')}}">
-      <link href="{{asset('assets/css/apps/mailbox.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/editors/quill/quill.snow.css')}}">
+      <link href="{{asset($diraction.'/assets/css/apps/mailbox.css')}}" rel="stylesheet" type="text/css" />
       <script src="plugins/sweetalerts/promise-polyfill.js"></script>
-      <link href="{{asset('plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/notification/snackbar/snackbar.min.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/notification/snackbar/snackbar.min.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('notes')
       {{-- App Notes --}}
-      <link href="{{asset('assets/css/apps/notes.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/apps/notes.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css" />
       @break
     
     @case('scrumboard')
       {{-- App Scrumboard --}}
-      <link href="{{asset('assets/css/apps/scrumboard.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/apps/scrumboard.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css">
       @break
 
     @case('todo-list')
       {{-- App Todo List --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/editors/quill/quill.snow.css')}}">
-      <link href="{{asset('assets/css/apps/todolist.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/editors/quill/quill.snow.css')}}">
+      <link href="{{asset($diraction.'/assets/css/apps/todolist.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('auth_boxed')
       {{-- Auth Lockscreen Boxed --}}
-      <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/authentication/form-2.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
+      <link href="{{asset($diraction.'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/authentication/form-2.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/switches.css')}}">
       @break
     
     @case('auth_default')
       {{-- Auth Lockscreen  --}}
-      <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/authentication/form-1.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
+      <link href="{{asset($diraction.'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/authentication/form-1.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/switches.css')}}">
       @break
 
     @case('charts')
       {{-- Charts --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
       <style>
           .apexcharts-canvas {
               margin: 0 auto;
@@ -116,15 +116,15 @@
 
     @case('accordions')
       {{-- Componets Accordions --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('blockui')
       {{-- Components Block ui --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-modal.css')}}" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/animate/animate.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-modal.css')}}" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/animate/animate.css')}}">
       <style>   
         .blockui-growl-message {
             display: none;
@@ -148,60 +148,60 @@
 
     @case('bootstrap_carousel')
       {{-- Components Bootsrap Carousel --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-carousel.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-carousel.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('cards')
       {{-- Components Cards --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/cards/card.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/cards/card.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('countdown')
       {{-- Compoents Countdown --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-countdown.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-countdown.css')}}" rel="stylesheet" type="text/css">
       @break
 
     @case('counter')  
       {{-- Component Counter --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-counter.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-counter.css')}}" rel="stylesheet" type="text/css">
       @break
 
     @case('lightbox')
       {{-- Component Lightbox --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link href="{{asset('plugins/lightbox/photoswipe.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/lightbox/default-skin/default-skin.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/lightbox/custom-photswipe.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link href="{{asset($diraction.'/plugins/lightbox/photoswipe.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/lightbox/default-skin/default-skin.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/lightbox/custom-photswipe.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('list_group')
       {{-- Compoent List Group --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-list-group.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-list-group.css')}}" rel="stylesheet" type="text/css">
       @break
 
     @case('media_object')
       {{-- Componetns media object --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-media_object.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-media_object.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('modals')
       {{-- Components Modal --}}
-      <link href="{{asset('plugins/animate/animate.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-modal.css')}}" rel="stylesheet" type="text/css" />  
+      <link href="{{asset($diraction.'/plugins/animate/animate.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-modal.css')}}" rel="stylesheet" type="text/css" />  
       @break
 
     @case('pricing_table')
       {{-- Component Pricing Table --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
-      <link href="{{asset('plugins/pricing-table/css/component.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/switches.css')}}">
+      <link href="{{asset($diraction.'/plugins/pricing-table/css/component.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('session_timeout')
@@ -231,30 +231,30 @@
 
     @case('notifications')
       {{-- Components snackbar --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/notification/snackbar/snackbar.min.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/notification/snackbar/snackbar.min.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('sweet_alerts')
       {{-- Component Sweetalert --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/animate/animate.css')}}" rel="stylesheet" type="text/css" />
-      <script src="{{asset('plugins/sweetalerts/promise-polyfill.js')}}"></script>
-      <link href="{{asset('plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/custom-sweetalert.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/animate/animate.css')}}" rel="stylesheet" type="text/css" />
+      <script src="{{asset($diraction.'/plugins/sweetalerts/promise-polyfill.js')}}"></script>
+      <link href="{{asset($diraction.'/plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/custom-sweetalert.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('tabs')
       {{-- Components Tabs --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/tabs-accordian/custom-tabs.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/tabs-accordian/custom-tabs.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('timeline')
       {{-- Component Timeline --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/components/timeline/custom-timeline.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/components/timeline/custom-timeline.css')}}" rel="stylesheet" type="text/css" />
       <style>
           .toggle-code-snippet { margin-bottom: 0px; }
       </style>
@@ -262,13 +262,13 @@
 
     @case('drag_n_drop')
       {{-- Drag and Drop ----> Dragula --}}
-      <link href="{{asset('plugins/drag-and-drop/dragula/dragula.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/drag-and-drop/dragula/example.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/drag-and-drop/dragula/dragula.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/drag-and-drop/dragula/example.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('alerts')
       {{-- Elements Alert --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/elements/alert.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/elements/alert.css')}}">
       <style>
           .btn-light { border-color: transparent; }
       </style>
@@ -276,12 +276,12 @@
 
     @case('avatars')
       {{-- Elements avatar --}}
-      <link href="{{asset('assets/css/elements/avatar.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/avatar.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('badges')
       {{-- Elements Badges --}}
-      <link href="{{asset('plugins/tagInput/tags-input.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/tagInput/tags-input.css')}}" rel="stylesheet" type="text/css" />
       <style>
           .tags-input-wrapper input { margin: 0 auto; }
       </style>
@@ -289,8 +289,8 @@
 
     @case('breadcrumbs')
       {{-- Elements Breadcrumb --}}
-      <link href="{{asset('assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/elements/breadcrumb.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/breadcrumb.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('button_group')
@@ -309,27 +309,27 @@
 
     @case('color_library')
       {{-- Elemnts Color Library --}}
-      <link href="{{asset('assets/css/elements/color_library.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/color_library.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('dropdown')
       {{-- Elements Dropdown --}}
-      <link href="{{asset('assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('infobox')
       {{-- Elements Infobox --}}
-      <link href="{{asset('assets/css/elements/infobox.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/infobox.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('jumbotron')
       {{-- Elemnts Jumbutron --}}
-      <link href="{{asset('assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/miscellaneous.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('loaders')
       {{-- Elements Loader  --}}
-      <link href="{{asset('plugins/loaders/custom-loader.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/loaders/custom-loader.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('progress_bar')
@@ -341,39 +341,39 @@
 
     @case('pagination')
       {{-- Elements Pagination --}}
-      <link href="{{asset('assets/css/elements/custom-pagination.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/custom-pagination.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('popovers')
       {{-- Elements Popovers --}}
-      <link href="{{asset('assets/css/elements/popover.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/popover.css')}}" rel="stylesheet" type="text/css" />
       @break
     
     @case('search')
       {{-- Elements Search --}}
-      <link href="{{asset('assets/css/elements/search.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/search.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('tooltips')
       {{-- Elements Tooltips --}}
-      <link href="{{asset('assets/css/elements/tooltip.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/tooltip.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('treeview')
       {{-- Elements Tree View --}}
-      <link href="{{asset('assets/css/elements/custom-tree_view.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/custom-tree_view.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('typography')
       {{-- Elements Typography --}}
-      <link href="{{asset('assets/css/elements/custom-typography.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/elements/custom-typography.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('font_icons')
       {{-- Font Icons --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="{{asset('plugins/font-icons/fontawesome/css/regular.css')}}">
-      <link rel="stylesheet" href="{{asset('plugins/font-icons/fontawesome/css/fontawesome.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="{{asset($diraction.'/plugins/font-icons/fontawesome/css/regular.css')}}">
+      <link rel="stylesheet" href="{{asset($diraction.'/plugins/font-icons/fontawesome/css/fontawesome.css')}}">
       <style>
           .feather-icon .icon-section {
             padding: 30px;
@@ -460,8 +460,8 @@
 
     @case('maps')
       {{-- Maps --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/jvector/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/jvector/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" type="text/css" />
       <style>
           .jvectormap-container {
               border-radius: 14px;
@@ -487,18 +487,18 @@
     
     @case('coming_soon')
       {{-- Pages Coming Soon --}}
-      <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/coming-soon/style.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
+      <link href="{{asset($diraction.'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/coming-soon/style.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/switches.css')}}">
       @break
 
 
     @case('contact_us')
       {{-- Pages Contact Us --}}
-      <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/contact_us.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
+      <link href="{{asset($diraction.'/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/contact_us.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
       <style>
         #content {
             width: 100%;
@@ -513,8 +513,8 @@
 
     @case('error404')
       {{-- Pages Error 404 --}}
-      <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/error/style-400.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/error/style-400.css')}}" rel="stylesheet" type="text/css" />
       <style>
           #content {
               width: 100%;
@@ -526,8 +526,8 @@
 
     @case('error500')
       {{-- Pages Error 500 --}}
-      <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/error/style-500.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/error/style-500.css')}}" rel="stylesheet" type="text/css" />
       <style>
         #content {
             width: 100%;
@@ -539,8 +539,8 @@
 
     @case('error503')
       {{-- Pages Error 503 --}}
-      <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/error/style-503.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/error/style-503.css')}}" rel="stylesheet" type="text/css" />
       <style>
         #content {
             width: 100%;
@@ -552,25 +552,25 @@
 
     @case('faq')
       {{-- Pages Faq --}}
-      <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/faq/faq.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/faq/faq.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('faq2')
       {{-- Pages Faq 2 --}}
-      <link href="{{asset('assets/css/pages/faq/faq2.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/faq/faq2.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('helpdesk')
       {{-- Pages Helpdesk --}}
-      <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('maintenence')
       {{-- Pages Maintenence --}}
-      <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/error/style-maintanence.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/error/style-maintanence.css')}}" rel="stylesheet" type="text/css" />
       <style>
         #content {
             width: 100%;
@@ -581,8 +581,8 @@
     
     @case('privacy')
       {{-- Pages Privacy --}}
-      <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('assets/css/pages/privacy/privacy.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/pages/privacy/privacy.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('alt_menu')
@@ -772,82 +772,82 @@
 
     @case('bootstrap_basic_table')
       {{-- Table Basic --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link href="{{asset('assets/css/tables/table-basic.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link href="{{asset($diraction.'/assets/css/tables/table-basic.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('alternative_pagination')
       {{-- Table Datatable Alternative --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('basic-light')
       {{-- Table Datatable Basic Light --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables-light.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style-light.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables-light.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style-light.css')}}">
       @break
 
     @case('basic')
       {{-- Table Datatable Basic --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('custom')
       {{-- Table Datatable Custom --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/custom_dt_custom.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/custom_dt_custom.css')}}">
       @break
 
     @case('html5')
       {{-- Table Datatable HTML5 --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/custom_dt_html5.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/custom_dt_html5.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('live_dom_ordering')
       {{-- Table Datatable Live Dom Ordering --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('miscellaneous')
       {{-- Table Datatable Miscellaneous --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/custom_dt_miscellaneous.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/custom_dt_miscellaneous.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('multi-column_ordering')
       {{-- Table Datatable Multi Coulumn Ordering --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('multiple_tables')
       {{-- Table Datatable Multiple Table --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/custom_dt_multiple_tables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/custom_dt_multiple_tables.css')}}">
       @break
 
     @case('ordering_sorting')
       {{-- Table Dattable Order Sorting --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       @break
 
     @case('range_search')
       {{-- Table Datatable Range Search --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/datatables.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/table/datatable/dt-global_style.css')}}">
       <style>
           .table-responsive > .table {
               background: transparent;
@@ -857,36 +857,36 @@
 
     @case('account_settings')
       {{-- User Account Settings --}}
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/dropify/dropify.min.css')}}">
-      <link href="{{asset('assets/css/users/account-setting.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/dropify/dropify.min.css')}}">
+      <link href="{{asset($diraction.'/assets/css/users/account-setting.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('profile')
       {{-- User Profile --}}
-      <link href="{{asset('assets/css/users/user-profile.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/users/user-profile.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('widgets')
       {{-- Widgets --}}
-      <link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widgets/modules-widgets.css')}}">
+      <link href="{{asset($diraction.'/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/widgets/modules-widgets.css')}}">
       @break
 
     @case('basic')
       {{-- Forms Basic --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('bootstrap_select')
       {{-- Forms Select --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/bootstrap-select/bootstrap-select.min.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/bootstrap-select/bootstrap-select.min.css')}}">
       @break
 
     @case('touchspin')
       {{-- Forms Bootstrap TouchSpin --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css')}}">
       <style>
           #demo_vertical::-ms-clear, #demo_vertical2::-ms-clear { display: none; }
           input#demo_vertical { border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
@@ -896,83 +896,83 @@
 
     @case('checkbox_radio')
       {{-- Forms Checkbox Radio --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
       @break
 
     @case('clipboard')
       {{-- Forms Clipboard --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/custom-clipboard.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/custom-clipboard.css')}}">
       @break
       
     @case('date_range_picker')
       {{-- Forms Date Range Picker --}}
-      <link href="{{asset('plugins/flatpickr/flatpickr.css')}}" rel="stylesheet" type="text/css">
-      <link href="{{asset('plugins/noUiSlider/nouislider.min.css')}}" rel="stylesheet" type="text/css">
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/flatpickr/custom-flatpickr.css')}}" rel="stylesheet" type="text/css">
-      <link href="{{asset('plugins/noUiSlider/custom-nouiSlider.css')}}" rel="stylesheet" type="text/css">
-      <link href="{{asset('plugins/bootstrap-range-Slider/bootstrap-slider.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/plugins/flatpickr/flatpickr.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/plugins/noUiSlider/nouislider.min.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/flatpickr/custom-flatpickr.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/plugins/noUiSlider/custom-nouiSlider.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{asset($diraction.'/plugins/bootstrap-range-Slider/bootstrap-slider.css')}}" rel="stylesheet" type="text/css">
       @break
     
     @case('file_upload')
       {{-- Forms File Upload --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/file-upload/file-upload-with-preview.min.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/file-upload/file-upload-with-preview.min.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('input_group')
       {{-- Forms Input group --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/theme-checkbox-radio.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/switches.css')}}">
       @break
 
     @case('input_mask')
       {{-- Forms Input Mask --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('layouts')
       {{-- Forms Layouts --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('markdown')
       {{-- Forms Markdown --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="{{asset('plugins/editors/markdown/simplemde.min.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="{{asset($diraction.'/plugins/editors/markdown/simplemde.min.css')}}">
       @break
 
     @case('maxlength')
       {{-- Forms Maxlength --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
       @break
 
     @case('quill')
       {{-- Forms Quill --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/editors/quill/quill.snow.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/editors/quill/quill.snow.css')}}">
       @break
 
 
     @case('select2')
       {{-- Forms Select 2 --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/select2/select2.min.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/select2/select2.min.css')}}">
       @break
 
     @case('switches')
       {{-- Forms Switch --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/assets/css/forms/switches.css')}}">
       @break
 
     @case('typeahead')
       {{-- Forms Typeahead --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link href="{{asset('plugins/autocomplete/autocomplete.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/plugins/autocomplete/autocomplete.css')}}" rel="stylesheet" type="text/css" />
       <style>
           .text-muted { color: #009688 !important; font-size: 12px; }
           .form-group label, label { font-size: 14px; font-weight: 600; color: #888ea8; }
@@ -981,13 +981,13 @@
 
     @case('validation')
       {{-- Forms Validation --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
       @break
     
     @case('wizards')
       {{-- Forms Wizards --}}
-      <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" type="text/css" href="{{asset('plugins/jquery-step/jquery.steps.css')}}">
+      <link href="{{asset($diraction.'/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="{{asset($diraction.'/plugins/jquery-step/jquery.steps.css')}}">
       <style>
           #formValidate .wizard > .content {min-height: 25em;}
           #example-vertical.wizard > .content {min-height: 24.5em;}

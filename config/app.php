@@ -123,6 +123,11 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+
+    // Application diraction.
+    'diraction'=>'ltr',
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

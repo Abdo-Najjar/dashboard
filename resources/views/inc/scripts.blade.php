@@ -1,20 +1,20 @@
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<script src="{{asset('assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-<script src="{{asset('bootstrap/js/popper.min.js')}}"></script>
-<script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset($diraction.'/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset($diraction.'/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset($diraction.'/bootstrap/js/bootstrap.min.js')}}"></script>
+@routes
 
 @if ($page_name != 'coming_soon' && $page_name != 'contact_us' && $page_name != 'error404' && $page_name != 'error500' && $page_name != 'error503' && $page_name != 'faq' && $page_name != 'helpdesk' && $page_name != 'maintenence' && $page_name != 'privacy' && $page_name != 'auth_boxed' && $page_name != 'auth_default')
-<script src="{{asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-<script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset($diraction.'/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset($diraction.'/assets/js/app.js')}}"></script>
 <script>
     $(document).ready(function() {
         App.init();
     });
 </script>
-<script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-<script src="{{asset('plugins/highlight/highlight.pack.js')}}"></script>
-<script src="{{asset('assets/js/custom.js')}}"></script>
+<script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+<script src="{{asset($diraction.'/plugins/highlight/highlight.pack.js')}}"></script>
+<script src="{{asset($diraction.'/assets/js/custom.js')}}"></script>
 @endif
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 
@@ -26,116 +26,116 @@
 
     @case('sales')
       {{-- Dashboard 2 --}}
-      <script src="{{asset('plugins/apex/apexcharts.min.js')}}"></script>
-      <script src="{{asset('assets/js/dashboard/dash_1.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/apex/apexcharts.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/dashboard/dash_1.js')}}"></script>
       @break
 
     @case('calendar')
       {{-- App Calendar --}}
-      <script src="{{asset('plugins/fullcalendar/moment.min.js')}}"></script>
-      <script src="{{asset('plugins/flatpickr/flatpickr.js')}}"></script>
-      <script src="{{asset('plugins/fullcalendar/fullcalendar.min.js')}}"></script>
-      <script src="{{asset('plugins/fullcalendar/custom-fullcalendar.advance.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/fullcalendar/moment.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/flatpickr/flatpickr.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/fullcalendar/fullcalendar.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/fullcalendar/custom-fullcalendar.advance.js')}}"></script>
       @break
 
     @case('chat')
       {{-- App Chat --}}
-      <script src="{{asset('assets/js/apps/mailbox-chat.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/mailbox-chat.js')}}"></script>
       @break    
 
     @case('contacts')
       {{-- App Contact --}}
-      <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-      <script src="{{asset('assets/js/apps/contact.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/contact.js')}}"></script>
       @break
 
     @case('invoice')
       {{-- App Invoice --}}
-      <script src="{{asset('assets/js/apps/invoice.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/invoice.js')}}"></script>
       @break
     
     @case('mailbox')
       {{-- App Mailbox --}}
-      <script src="{{asset('assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
-      <script src="{{asset('plugins/editors/quill/quill.js')}}"></script>
-      <script src="{{asset('plugins/sweetalerts/sweetalert2.min.js')}}"></script>
-      <script src="{{asset('plugins/notification/snackbar/snackbar.min.js')}}"></script>
-      <script src="{{asset('assets/js/apps/custom-mailbox.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/editors/quill/quill.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/sweetalerts/sweetalert2.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/notification/snackbar/snackbar.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/custom-mailbox.js')}}"></script>
       @break
 
     @case('notes')
       {{-- App Notes --}}
-      <script src="{{asset('assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
-      <script src="{{asset('assets/js/apps/notes.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/notes.js')}}"></script>
       @break
     
     @case('scrumboard')
       {{-- App Scrumboard --}}
-      <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-      <script src="{{asset('assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
-      <script src="{{asset('assets/js/apps/scrumboard.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/scrumboard.js')}}"></script>
       @break
 
     @case('todo-list')
       {{-- App Todo List --}}
-      <script src="{{asset('assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
-      <script src="{{asset('plugins/editors/quill/quill.js')}}"></script>
-      <script src="{{asset('assets/js/apps/todoList.js')}}"></script>  
+      <script src="{{asset($diraction.'/assets/js/ie11fix/fn.fix-padStart.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/editors/quill/quill.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/apps/todoList.js')}}"></script>  
       @break
 
     @case('auth_boxed')
       {{-- Auth Lockscreen Boxed --}}
-      <script src="{{asset('assets/js/authentication/form-2.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/authentication/form-2.js')}}"></script>
       @break
     
     @case('auth_default')
       {{-- Auth Lockscreen --}}
-      <script src="{{asset('assets/js/authentication/form-1.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/authentication/form-1.js')}}"></script>
       @break
 
     @case('charts')
       {{-- Apex Chart --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/apex/apexcharts.min.js')}}"></script>
-      <script src="{{asset('plugins/apex/custom-apexcharts.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/apex/apexcharts.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/apex/custom-apexcharts.js')}}"></script>
       @break
 
     @case('accordions')
       {{-- Components Accordion --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('assets/js/components/ui-accordions.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/components/ui-accordions.js')}}"></script>
       @break
 
     @case('blockui')
       {{-- Components Block UI --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/blockui/jquery.blockUI.min.js')}}"></script>
-      <script src="{{asset('plugins/blockui/custom-blockui.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/blockui/jquery.blockUI.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/blockui/custom-blockui.js')}}"></script>
       @break
 
     @case('bootstrap_carousel')
       {{-- Components Bootstrap Carousel --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
       @break
 
     @case('countdown')
       {{-- Components Countdown --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/countdown/jquery.countdown.min.js')}}"></script>
-      <script src="{{asset('assets/js/components/custom-countdown.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/countdown/jquery.countdown.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/components/custom-countdown.js')}}"></script>
       @break
 
     @case('counter')  
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/counter/jquery.countTo.js')}}"></script>
-      <script src="{{asset('assets/js/components/custom-counter.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/counter/jquery.countTo.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/components/custom-counter.js')}}"></script>
       @break
 
     @case('lightbox')
       {{-- Components Lightbox --}}
-      <script src="{{asset('plugins/lightbox/photoswipe.min.js')}}"></script>
-      <script src="{{asset('plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
-      <script src="{{asset('plugins/lightbox/custom-photswipe.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/lightbox/photoswipe.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/lightbox/custom-photswipe.js')}}"></script>
       @break
 
     @case('modals')
@@ -189,15 +189,15 @@
 
     @case('session_timeout')
       {{-- Compoentnts session timeout --}}
-      <script src="{{asset('assets/js/components/session-timeout/bootstrap-session-timeout.js')}}"></script>
-      <script src="{{asset('assets/js/components/session-timeout/custom-bootstrap_session_timeout.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/components/session-timeout/bootstrap-session-timeout.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/components/session-timeout/custom-bootstrap_session_timeout.js')}}"></script>
       @break
 
     @case('notifications')
       {{-- Compoents Snackbar --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/notification/snackbar/snackbar.min.js')}}"></script>
-      <script src="{{asset('assets/js/components/notification/custom-snackbar.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/notification/snackbar/snackbar.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/components/notification/custom-snackbar.js')}}"></script>
       <script>
           // Get the Toast button
           var toastButton = document.getElementById("toast-btn");
@@ -212,26 +212,26 @@
 
     @case('sweet_alerts')
       {{-- Components Sweetalerts --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/sweetalerts/sweetalert2.min.js')}}"></script>
-      <script src="{{asset('plugins/sweetalerts/custom-sweetalert.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/sweetalerts/sweetalert2.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/sweetalerts/custom-sweetalert.js')}}"></script>
       @break
 
     @case('tabs')
       {{-- Components Tabs --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
       @break
 
     @case('drag_n_drop')
       {{-- Drag and Drop ----> Dragula --}}
-      <script src="{{asset('plugins/drag-and-drop/dragula/dragula.min.js')}}"></script>
-      <script src="{{asset('plugins/drag-and-drop/dragula/custom-dragula.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/drag-and-drop/dragula/dragula.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/drag-and-drop/dragula/custom-dragula.js')}}"></script>
       @break
 
     @case('badges')
       {{-- Elements Badges --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/tagInput/tags-input.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/tagInput/tags-input.js')}}"></script>
       <script>
           var instance = new TagsInput({
               selector: 'skill-input'
@@ -242,27 +242,27 @@
 
     @case('popovers')
       {{-- Element popovers --}}
-      <script src="{{asset('assets/js/elements/popovers.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/elements/popovers.js')}}"></script>
       @break
     
     @case('search')
       {{-- Elements Serach --}}
-      <script src="{{asset('assets/js/elements/custom-search.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/elements/custom-search.js')}}"></script>
       @break
 
     @case('tooltips')
       {{-- Elemnets Tooltips --}}
-      <script src="{{asset('assets/js/elements/tooltip.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/elements/tooltip.js')}}"></script>
       @break
 
     @case('treeview')
       {{-- Elements Treeview --}}
-      <script src="{{asset('plugins/treeview/custom-jstree.js')}}"></script>
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/treeview/custom-jstree.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
       @break
 
     @case('font_icons')
-      <script src="{{asset('plugins/font-icons/feather/feather.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/font-icons/feather/feather.min.js')}}"></script>
       <script type="text/javascript">
           feather.replace();
       </script>
@@ -270,22 +270,22 @@
 
     @case('maps')
       {{-- Maps Jvector --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/jvector/jquery-jvectormap-2.0.3.min.js')}}"></script>
-      <script src="{{asset('plugins/jvector/africa/jquery-jvectormap-africa-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/asia/jquery-jvectormap-asia-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/continents/jquery-jvectormap-continents-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/europe/jquery-jvectormap-europe-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/north_america/jquery-jvectormap-north-america-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/oceania/jquery-jvectormap-oceanina-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/south-america/jquery-jvectormap-south-america-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/worldmap_script/jquery-jvectormap-world-mill-en.js')}}"></script>
-      <script src="{{asset('plugins/jvector/jvector_script.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/jquery-jvectormap-2.0.3.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/africa/jquery-jvectormap-africa-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/asia/jquery-jvectormap-asia-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/continents/jquery-jvectormap-continents-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/europe/jquery-jvectormap-europe-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/north_america/jquery-jvectormap-north-america-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/oceania/jquery-jvectormap-oceanina-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/south-america/jquery-jvectormap-south-america-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/worldmap_script/jquery-jvectormap-world-mill-en.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jvector/jvector_script.js')}}"></script>
       @break
     
     @case('coming_soon')
       {{-- Pages Coming Soon --}}
-      <script src="{{asset('assets/js/pages/coming-soon/coming-soon.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/pages/coming-soon/coming-soon.js')}}"></script>
       @break
 
 
@@ -574,27 +574,27 @@
                 position: myLatLng,
                 map: map,
                 title: 'Hello World!',
-                icon: "{{asset('storage/img/contact-us-map-pin.svg')}}"
+                icon: "{{asset($diraction.'/storage/img/contact-us-map-pin.svg')}}"
               });
           }
       </script>
-      <script src="{{asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyDoOlJCERKYB1Cp-C89_sscNkelSfeeBnw&callback=initMap')}}" async defer></script>
+      <script src="{{asset($diraction.'/https://maps.googleapis.com/maps/api/js?key=AIzaSyDoOlJCERKYB1Cp-C89_sscNkelSfeeBnw&callback=initMap')}}" async defer></script>
       @break
 
 
     @case('faq')
       {{-- Pages FAQ --}}
-      <script src="{{asset('assets/js/pages/faq/faq.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/pages/faq/faq.js')}}"></script>
       @break
 
     @case('faq2')
       {{-- Pages FAQ2 --}}
-      <script src="{{asset('assets/js/pages/faq/faq2.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/pages/faq/faq2.js')}}"></script>
       @break
 
     @case('helpdesk')
       {{-- Pages Helpdesk --}}
-      <script src="{{asset('assets/js/pages/helpdesk.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/pages/helpdesk.js')}}"></script>
       @break
     
     @case('privacy')
@@ -611,7 +611,7 @@
 
     @case('bootstrap_basic_table')
       {{-- Table Basic --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
       <script>
           checkall('todoAll', 'todochkbox');
           $('[data-toggle="tooltip"]').tooltip()
@@ -620,7 +620,7 @@
 
     @case('alternative_pagination')
       {{-- Table Datatable Alternative Pagination --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           $(document).ready(function() {
               $('#alter_pagination').DataTable( {
@@ -647,7 +647,7 @@
 
     @case('basic-light')
       {{-- Table Datatable Basic Light --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           $('#zero-config').DataTable({
               "oLanguage": {
@@ -666,7 +666,7 @@
 
     @case('basic')
       {{-- Tables Datatable Basic --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           $('#zero-config').DataTable({
               "oLanguage": {
@@ -685,7 +685,7 @@
 
     @case('custom')
       {{-- Table Datatable Custom --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           // var e;
           c1 = $('#style-1').DataTable({
@@ -751,11 +751,11 @@
 
     @case('html5')
       {{-- Table Datatable HTML5 --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
-      <script src="{{asset('plugins/table/datatable/button-ext/dataTables.buttons.min.js')}}"></script>
-      <script src="{{asset('plugins/table/datatable/button-ext/jszip.min.js')}}"></script>    
-      <script src="{{asset('plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
-      <script src="{{asset('plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/button-ext/dataTables.buttons.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/button-ext/jszip.min.js')}}"></script>    
+      <script src="{{asset($diraction.'/plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
       <script>
           $('#html5-extension').DataTable( {
               dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
@@ -783,7 +783,7 @@
 
     @case('live_dom_ordering')
       {{-- Table Datatable Live Dom Ordering --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>        
           /* Create an array with the values of all the input boxes in a column */
           $.fn.dataTable.ext.order['dom-text'] = function  ( settings, col )
@@ -839,13 +839,13 @@
 
     @case('miscellaneous')
       {{-- Table Datatable Miscellaneous --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
-      <script src="{{asset('plugins/table/datatable/custom_miscellaneous.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/custom_miscellaneous.js')}}"></script>
       @break
 
     @case('multi-column_ordering')
       {{-- Table Datatable Multi Column Ordering --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           $('#multi-column-ordering').DataTable({
               "oLanguage": {
@@ -875,7 +875,7 @@
 
     @case('multiple_tables')
       {{-- Table Datatable Multiple Tables --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           $(document).ready(function() {
               $('table.multi-table').DataTable({
@@ -900,7 +900,7 @@
 
     @case('ordering_sorting')
       {{-- Table Datatable Order Sorting --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>        
           $('#default-ordering').DataTable( {
               "oLanguage": {
@@ -921,7 +921,7 @@
 
     @case('range_search')
       {{-- Table Datatable Range Search --}}
-      <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/table/datatable/datatables.js')}}"></script>
       <script>
           /* Custom filtering function which will search data in column four between two values */
           $.fn.dataTable.ext.search.push(
@@ -961,52 +961,52 @@
 
     @case('account_settings')
       {{-- User Account Setting  --}}
-      <script src="{{asset('plugins/dropify/dropify.min.js')}}"></script>
-      <script src="{{asset('plugins/blockui/jquery.blockUI.min.js')}}"></script>
-      <script src="{{asset('assets/js/users/account-settings.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/dropify/dropify.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/blockui/jquery.blockUI.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/users/account-settings.js')}}"></script>
       @break
 
 
     @case('widgets')
       {{-- Widgets --}}
-      <script src="{{asset('plugins/apex/apexcharts.min.js')}}"></script>
-      <script src="{{asset('assets/js/widgets/modules-widgets.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/apex/apexcharts.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/widgets/modules-widgets.js')}}"></script>
       @break
 
     @case('bootstrap_select')
       {{-- Forms Bootstrap Select --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
       @break
 
     @case('touchspin')
       {{-- Forms Touchspin --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
-      <script src="{{asset('plugins/bootstrap-touchspin/custom-bootstrap-touchspin.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/bootstrap-touchspin/custom-bootstrap-touchspin.js')}}"></script>
       @break
 
     @case('clipboard')
       {{-- Forms clipboard --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('assets/js/clipboard/clipboard.min.js')}}"></script>
-      <script src="{{asset('assets/js/forms/custom-clipboard.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/clipboard/clipboard.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/forms/custom-clipboard.js')}}"></script>
       @break
       
     @case('date_range_picker')
       {{-- Forms Date Range Picker --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/flatpickr/flatpickr.js')}}"></script>
-      <script src="{{asset('plugins/noUiSlider/nouislider.min.js')}}"></script>
-      <script src="{{asset('plugins/flatpickr/custom-flatpickr.js')}}"></script>
-      <script src="{{asset('plugins/noUiSlider/custom-nouiSlider.js')}}"></script>
-      <script src="{{asset('plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js')}}"></script>      
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/flatpickr/flatpickr.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/noUiSlider/nouislider.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/flatpickr/custom-flatpickr.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/noUiSlider/custom-nouiSlider.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js')}}"></script>      
       @break
     
     @case('file_upload')
       {{-- Forms File Upload --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/file-upload/file-upload-with-preview.min.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/file-upload/file-upload-with-preview.min.js')}}"></script>
       <script>
           //First upload
           var firstUpload = new FileUploadWithPreview('myFirstImage')
@@ -1017,58 +1017,58 @@
 
     @case('input_mask')
       {{-- Forms Input Mask --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/input-mask/jquery.inputmask.bundle.min.js')}}"></script>
-      <script src="{{asset('plugins/input-mask/input-mask.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/input-mask/jquery.inputmask.bundle.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/input-mask/input-mask.js')}}"></script>
       @break
 
     @case('maxlength')
       {{-- Forms Maxlength --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
-      <script src="{{asset('plugins/bootstrap-maxlength/custom-bs-maxlength.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/bootstrap-maxlength/custom-bs-maxlength.js')}}"></script>
       @break
 
     @case('markdown')
       {{-- Forms Markdown --}}
-      <script src="{{asset('plugins/editors/markdown/simplemde.min.js')}}"></script>
-      <script src="{{asset('plugins/editors/markdown/custom-markdown.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/editors/markdown/simplemde.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/editors/markdown/custom-markdown.js')}}"></script>
       @break
 
     @case('quill')
       {{-- Forms Quill --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/editors/quill/quill.js')}}"></script>
-      <script src="{{asset('plugins/editors/quill/custom-quill.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/editors/quill/quill.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/editors/quill/custom-quill.js')}}"></script>
       @break
 
     @case('select2')
       {{-- Forms Select2 --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/select2/select2.min.js')}}"></script>
-      <script src="{{asset('plugins/select2/custom-select2.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/select2/select2.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/select2/custom-select2.js')}}"></script>
       @break
 
     @case('typeahead')
       {{-- Forms Typeahead --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/autocomplete/jquery.mockjax.js')}}"></script>
-      <script src="{{asset('plugins/autocomplete/jquery.autocomplete.js')}}"></script>
-      <script src="{{asset('plugins/autocomplete/countries.js')}}"></script>
-      <script src="{{asset('plugins/autocomplete/demo.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/autocomplete/jquery.mockjax.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/autocomplete/jquery.autocomplete.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/autocomplete/countries.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/autocomplete/demo.js')}}"></script>
       @break
 
     @case('validation')
       {{-- Forms Validation --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('assets/js/forms/bootstrap_validation/bs_validation_script.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/forms/bootstrap_validation/bs_validation_script.js')}}"></script>
       @break
     
     @case('wizards')
       {{-- Forms Wizards --}}
-      <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
-      <script src="{{asset('plugins/jquery-step/jquery.steps.min.js')}}"></script>
-      <script src="{{asset('plugins/jquery-step/custom-jquery.steps.js')}}"></script>
+      <script src="{{asset($diraction.'/assets/js/scrollspyNav.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jquery-step/jquery.steps.min.js')}}"></script>
+      <script src="{{asset($diraction.'/plugins/jquery-step/custom-jquery.steps.js')}}"></script>
       @break
 
     @default
