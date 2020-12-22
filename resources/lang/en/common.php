@@ -5,5 +5,10 @@ return [
     'arabic'    => 'Arabic',
     'english'   => 'English',
     'countries' => 'Countries',
-    'all'       => 'All'
+    'all'       => 'All',
+    'cities'    => 'Cities',
+    'smart_decisions'   => 'Smart decisions',
+    'locations'         => 'Locations',
+    'name'              => 'Name',
+    'status'            => 'Status'
 ];

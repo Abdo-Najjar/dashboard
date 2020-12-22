@@ -19,6 +19,18 @@ class DashboardController extends Controller
         return view('dashboard')->with($data);
     }
 
+    public function smartDecisions ()
+    {
+        $data = [
+            'category_name' => 'smartDecisions',
+            'page_name' => 'analytics',
+            'has_scrollspy' => 0,
+            'scrollspy_offset' => '',
+        ];
+
+        return view('smartDecisions')->with($data);
+    }
+
     public function setLang()
     {
         session()->put('diraction' , request()->diraction);

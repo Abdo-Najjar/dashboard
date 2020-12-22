@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import vSelect from 'vue-select'
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 // translation support
 Vue.prototype.trans = (string, args) => {
@@ -16,8 +17,16 @@ Vue.prototype.trans = (string, args) => {
 
 
 //components
+
 Vue.component('v-select', vSelect)
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyD9wmTJeQspHyBabX7npNkHrbAN7fXshmo',
+  },
+})
 Vue.component('dashboard-vue', require('./views/Dashboard.vue').default);
+Vue.component('smart-decisions-vue', require('./views/SmartDecisions.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

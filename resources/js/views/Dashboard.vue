@@ -2,13 +2,14 @@
   <div class="col-md-12">
     <div class="mb-4 col-3">
       <label v-text="trans('common.countries')"></label>
-      <vSelect
+      <v-select
         v-model="selectedCountry"
         :reduce="(country) => country.id"
         label="name"
         :options="countries"
       />
     </div>
+
     <div class="row mb-4">
       <Card />
       <Card />
@@ -27,7 +28,6 @@
 <script>
 import Card from "../components/card";
 import axios from "axios";
-import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
 
 export default {
@@ -39,7 +39,6 @@ export default {
   },
   components: {
     Card,
-    vSelect,
   },
   methods: {
     getCountries() {

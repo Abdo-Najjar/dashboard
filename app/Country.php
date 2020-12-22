@@ -12,4 +12,8 @@ class Country extends Model
 
     public $translatable  = ['name', 'currency'];
 
+    public function cities()
+    {
+        return $this->hasMany(City::class);
+    }
 }

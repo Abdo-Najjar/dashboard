@@ -5,5 +5,8 @@ return [
     'arabic'    => 'العربية',
     'english'   => 'الإنجليزية',
     'countries' => 'الدول',
-    'all'       => 'الكل'
+    'all'       => 'الكل',
+    'cities'    =>  'المدن',
+    'smart_decisions'   => 'قرارات ذكية',
+    'locations'         => 'الأماكن'
 ];
