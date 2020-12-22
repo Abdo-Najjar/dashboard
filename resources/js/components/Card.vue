@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="card">
       <div class="card-header">Example Component</div>
 
@@ -9,15 +9,7 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
-  mounted() {
-    console.log(translate('common.dashboard'));
 
-
-    // axios.get(route('test')).then(function(data){
-    //   console.log(data.data);
-    // });
-  },
 };
 </script>

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // send transactions file to js.
 Route::get('js/translations.js', function () {
     $lang = config('app.locale');
-    $strings = \Illuminate\Support\Facades\Cache::rememberForever('lang_' . $lang . '.js', function () use ($lang) {
+    $strings = \Illuminate\Support\Facades\Cache::remember('lang_' . $lang . '.js', 23, function () use ($lang) {
         $files = [
             resource_path('lang/' . $lang . '/common.php'),
         ];
@@ -30,6 +30,8 @@ Route::get('js/translations.js', function () {
 
         return $strings;
     });
+    \Illuminate\Support\Facades\Cache::forget('lang_' . $lang . '.js');
+
     header('Content-Type: text/javascript');
     echo ('window.i18n = ' . json_encode($strings) . ';');
     exit();
