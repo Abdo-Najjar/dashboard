@@ -8,7 +8,7 @@
             <ul class="navbar-item theme-brand flex-row  text-center">
                 <li class="nav-item theme-logo">
                     <a href="/analytics">
-                        <img src="{{asset('storage/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
+                        <img src="{{asset('/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
                     </a>
                 </li>
                 <li class="nav-item theme-text">
@@ -34,12 +34,12 @@
                 @if ($category_name != 'starter_kits')
                 <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('storage/img/'.config('app.diraction').'.png')}}" class="flag-width" alt="flag">
+                        <img src="{{asset('/img/'.config('app.diraction').'.png')}}" class="flag-width" alt="flag">
                     </a>
                     
                     <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
-                        <a class="dropdown-item d-flex" href="{{ route('lang.change', 'rtl') }}">   <img src="{{asset('storage/img/rtl.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;@lang('common.arabic')</span></a>
-                        <a class="dropdown-item d-flex" href="{{ route('lang.change', 'ltr') }}"><img src="{{asset('storage/img/ltr.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;@lang('common.english')</span></a>
+                        <a class="dropdown-item d-flex" href="{{ route('lang.change', 'rtl') }}">   <img src="{{asset('img/rtl.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;@lang('common.arabic')</span></a>
+                        <a class="dropdown-item d-flex" href="{{ route('lang.change', 'ltr') }}"><img src="{{asset('img/ltr.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;@lang('common.english')</span></a>
                     </div>
                 </li>
 
@@ -54,7 +54,7 @@
 
                                     <div class="media">
                                         <div class="user-img">
-                                            <img class="usr-img rounded-circle" src="{{asset('storage/img/90x90.jpg')}}" alt="profile">
+                                            <img class="usr-img rounded-circle" src="{{asset('/img/90x90.jpg')}}" alt="profile">
                                         </div>
                                         <div class="media-body">
                                             <div class="">
@@ -71,7 +71,7 @@
 
                                     <div class="media">
                                         <div class="user-img">
-                                            <img class="usr-img rounded-circle" src="{{asset('storage/img/90x90.jpg')}}" alt="profile">
+                                            <img class="usr-img rounded-circle" src="{{asset('/img/90x90.jpg')}}" alt="profile">
                                         </div>
                                         <div class="media-body">
                                             <div class="">
@@ -88,7 +88,7 @@
 
                                     <div class="media">
                                         <div class="user-img">
-                                            <img class="usr-img rounded-circle" src="{{asset('storage/img/90x90.jpg')}}" alt="profile">
+                                            <img class="usr-img rounded-circle" src="{{asset('/img/90x90.jpg')}}" alt="profile">
                                         </div>
                                         <div class="media-body">
                                             <div class="">
@@ -144,7 +144,7 @@
 
                 <li class="nav-item dropdown user-profile-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <img src="{{asset('storage/img/90x90.jpg')}}" alt="avatar">
+                        <img src="{{asset('/img/90x90.jpg')}}" alt="avatar">
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="">
