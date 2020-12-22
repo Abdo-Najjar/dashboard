@@ -16,10 +16,7 @@ Route::prefix('admin')->group(function(){
     Route::get('countries/create', [CountryController::class , 'index'])->name('countries.create');
     
     Route::get('countries/{country}/edit', [CountryController::class , 'index'])->name('countries.edit');
-    
 
 
     Route::get('cities', [CityController::class , 'index'])->name('cities.index');
-
-
 });

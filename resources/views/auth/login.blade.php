@@ -11,12 +11,12 @@
     <title>Login</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset(config('app.diraction') .'/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/authentication/form-2.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
+    <link href="{{asset(config('app.diraction') .'/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset(config('app.diraction') .'/assets/css/authentication/form-2.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset(config('app.diraction') .'/assets/css/forms/theme-checkbox-radio.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset(config('app.diraction') .'/assets/css/forms/switches.css')}}">
     <style>
         .form-form .form-form-wrap form .field-wrapper svg.feather-eye {
             top: 46px;
@@ -43,7 +43,7 @@
                                 <div id="username-field" class="field-wrapper input">
                                     <label for="username">Email</label>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="admin@cork.com" required autocomplete="email" autofocus>
+                                    <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="a@a.com" required autocomplete="email" autofocus>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -99,10 +99,10 @@
     </div>
 
 
-    <script src="{{asset('assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{asset('bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/authentication/form-2.js')}}"></script>
+    <script src="{{asset(config('app.diraction') .'/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset(config('app.diraction') .'/bootstrap/js/popper.min.js')}}"></script>
+    <script src="{{asset(config('app.diraction') .'/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset(config('app.diraction') .'/assets/js/authentication/form-2.js')}}"></script>
 </body>
 </html>
 
