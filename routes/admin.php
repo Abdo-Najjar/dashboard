@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->middleware(['auth'])->group(function(){
 
     Route::get('home', [DashboardController::class , 'home'])->name('home');
 
