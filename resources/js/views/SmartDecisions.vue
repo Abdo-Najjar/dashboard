@@ -48,11 +48,9 @@ export default {
   },
   methods: {
     getCountries() {
-      axios
-        .get(route("vue.countries.index"))
-        .then((res) => {
-          this.countries = res.data.data;
-        })
+      axios.get(route("vue.countries.index")).then((res) => {
+        this.countries = res.data.data;
+      });
     },
     getCitiesFromCountry(countryId) {
       axios.get(route("vue.countries.cities", countryId)).then((res) => {
@@ -70,8 +68,8 @@ export default {
       const selectedCountry = this.countries.find(
         (country) => country.id == val
       );
-      this.selectedCountryLat = selectedCountry.latitude;
-      this.selectedCountryLng = selectedCountry.longitude;
+      this.selectedCountryLat = parseFloat(selectedCountry.latitude);
+      this.selectedCountryLng = parseFloat(selectedCountry.longitude);
       this.getCitiesFromCountry(val);
     },
   },

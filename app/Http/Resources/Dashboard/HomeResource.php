@@ -44,7 +44,48 @@ class HomeResource extends JsonResource
             ],
 
             'order_statics' => OrderStaticsResource::collection($this->cities),
-            'users_statics' => UsersStaticsResource::collection($this->cities)
+            'users_statics' => UsersStaticsResource::collection($this->cities),
+            'today_summary' => [
+                [
+                    'name'  =>   trans('common.new_order'),
+                    'count' => rand(10, 30)
+                ],
+                [
+                    'name'  =>   trans('common.order_done'),
+                    'count' => rand(10, 30)
+                ],
+                [
+                    'name'  =>   trans('common.order_underway'),
+                    'count' => rand(10, 30)
+                ],
+                [
+                    'name'  =>   trans('common.today_income'),
+                    'count' => rand(10, 30)
+                ],
+            ],
+            'orders_statuses'   => [
+                [
+                    'name'  =>   trans('common.new'),
+                    'count' => rand(10, 30)
+                ],
+                [
+
+                    'name'  =>   trans('common.underway'),
+                    'count' => rand(10, 30)
+                ],
+                [
+                    'name'  =>   trans('common.confirmed'),
+                    'count' => rand(10, 30)
+                ],
+                [
+                    'name'  =>   trans('common.completed'),
+                    'count' => rand(10, 30)
+                ],
+                [
+                    'name'  =>   trans('common.canceled'),
+                    'count' => rand(10, 30)
+                ],
+            ]
         ];
     }
 }

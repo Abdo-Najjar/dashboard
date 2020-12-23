@@ -7,7 +7,7 @@ return [
     'countries' => 'Countries',
     'all'       => 'All',
     'cities'    => 'Cities',
-    'smart_decisions'   => 'Smart decisions',
+    'smart_decisions'   => 'Smart Analytics',
     'locations'         => 'Locations',
     'name'              => 'Name',
     'status'            => 'Status',
@@ -27,8 +27,21 @@ return [
     'orders_number' => 'Orders Number',
     'total_income' => 'Total Income',
     'customers_number'         => 'Customers Number',
-    'service_providers_number' => 'Service Providers Number'
+    'service_providers_number' => 'Service Providers Number',
+    'today_summary'              =>  "Today's summary",
+    'orders_statuses'            => 'Orders Statuses',
 
+    'new_order'          => 'New Order',
+    'order_done'         => 'Order Done',
+    'order_underway'     => 'Order Underway',
+    'today_income'       => 'Today Income',
 
+    'new' => 'New',
+    'underway' => 'Underway',
+    'confirmed' => 'Confirmed',
+    'completed' => 'Completed',
+    'canceled' => 'Canceled',
 
+    'number'    => 'Number',
+    'type'      => 'Type'
 ];

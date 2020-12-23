@@ -2105,6 +2105,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2118,6 +2153,8 @@ __webpack_require__.r(__webpack_exports__);
         cards: {},
         order_statics: [],
         users_statics: [],
+        today_summary: [],
+        orders_statuses: [],
         service_providers: {
           best_earn_service_providers: [],
           best_service_providers: []
@@ -2141,7 +2178,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       })).then(function (res) {
         _this.review = res.data.data;
-        console.log(res.data.data.order_statics, res.data.data.users_statics);
+        console.log(res.data.data.today_summary); // .forEach(element => {
+        //     console.log(element);
+        // });
 
         _this.review.countries.push({
           id: "*",
@@ -2249,8 +2288,8 @@ __webpack_require__.r(__webpack_exports__);
       var selectedCountry = this.countries.find(function (country) {
         return country.id == val;
       });
-      this.selectedCountryLat = selectedCountry.latitude;
-      this.selectedCountryLng = selectedCountry.longitude;
+      this.selectedCountryLat = parseFloat(selectedCountry.latitude);
+      this.selectedCountryLng = parseFloat(selectedCountry.longitude);
       this.getCitiesFromCountry(val);
     }
   },
@@ -6839,6 +6878,77 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("widget", { staticClass: "mt-5" }, [
+        _c(
+          "div",
+          { staticClass: "row text-center" },
+          [
+            _c(
+              "table-view",
+              {
+                attrs: {
+                  title: _vm.trans("common.today_summary"),
+                  type: "bg-dark"
+                }
+              },
+              [
+                _c("tr", [
+                  _c("th", {
+                    domProps: {
+                      textContent: _vm._s(_vm.trans("common.number"))
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("th", {
+                    domProps: { textContent: _vm._s(_vm.trans("common.type")) }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.review.today_summary, function(item, index) {
+                  return _c("tr", { key: index }, [
+                    _c("td", [_vm._v(_vm._s(item.count))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.name))])
+                  ])
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "table-view",
+              {
+                attrs: {
+                  title: _vm.trans("common.orders_statuses"),
+                  type: "bg-secondary"
+                }
+              },
+              [
+                _c("tr", [
+                  _c("th", {
+                    domProps: {
+                      textContent: _vm._s(_vm.trans("common.number"))
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("th", {
+                    domProps: { textContent: _vm._s(_vm.trans("common.type")) }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.review.orders_statuses, function(item, index) {
+                  return _c("tr", { key: index }, [
+                    _c("td", [_vm._v(_vm._s(item.count))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.name))])
+                  ])
+                })
+              ],
+              2
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "row text-center" },

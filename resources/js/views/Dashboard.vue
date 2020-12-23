@@ -57,10 +57,42 @@
       </div>
     </widget>
 
+    <!-- today_summary
+orders_statuses -->
     <widget class="mt-5">
       <div class="row text-center">
-        
-        <table-view :title="trans('common.best_service_providers')" type="bg-primary">
+        <table-view :title="trans('common.today_summary')" type="bg-dark">
+          <tr>
+            <th v-text="trans('common.number')"></th>
+            <th v-text="trans('common.type')" ></th>
+          </tr>
+          <tr v-for="(item, index) in review.today_summary" :key="index">
+            <td>{{ item.count }}</td>
+            <td>{{ item.name }}</td>
+          </tr>
+        </table-view>
+
+        <table-view
+          :title="trans('common.orders_statuses')"
+          type="bg-secondary"
+        >
+           <tr>
+            <th v-text="trans('common.number')"></th>
+            <th v-text="trans('common.type')" ></th>
+          </tr>
+          
+          <tr v-for="(item, index) in review.orders_statuses" :key="index">
+            <td>{{ item.count }}</td>
+            <td>{{ item.name }}</td>
+          </tr>
+        </table-view>
+      </div>
+
+      <div class="row text-center">
+        <table-view
+          :title="trans('common.best_service_providers')"
+          type="bg-primary"
+        >
           <tr
             v-for="service_provider in review.service_providers
               .best_service_providers"
@@ -70,7 +102,10 @@
           </tr>
         </table-view>
 
-        <table-view :title="trans('common.best_earn_service_providers')" type="bg-info">
+        <table-view
+          :title="trans('common.best_earn_service_providers')"
+          type="bg-info"
+        >
           <tr
             v-for="service_provider in review.service_providers
               .best_earn_service_providers"
@@ -82,7 +117,7 @@
       </div>
 
       <div class="row text-center mt-4">
-        <table-view :title="trans('common.order_statics')"  type="bg-success">
+        <table-view :title="trans('common.order_statics')" type="bg-success">
           <tr>
             <th v-text="trans('common.city')"></th>
             <th v-text="trans('common.orders_number')"></th>
@@ -128,6 +163,8 @@ export default {
         cards: {},
         order_statics: [],
         users_statics: [],
+        today_summary: [],
+        orders_statuses: [],
         service_providers: {
           best_earn_service_providers: [],
           best_service_providers: [],
@@ -154,7 +191,13 @@ export default {
         .then((res) => {
           this.review = res.data.data;
 
-          console.log(res.data.data.order_statics, res.data.data.users_statics);
+
+            console.log(res.data.data.today_summary);
+
+          // .forEach(element => {
+          //     console.log(element);
+          // });
+
 
           this.review.countries.push({
             id: "*",
