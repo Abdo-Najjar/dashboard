@@ -18,5 +18,17 @@ return [
     'total_orders'            => 'Total Orders',
     'total_month_orders'      => 'Total Month Orders',
     'close_orders'            => 'Close Orders',
-    'open_orders'             => 'Open Orders'
+    'open_orders'             => 'Open Orders',
+    'best_service_providers'      => 'Best Service Providers',
+    'best_earn_service_providers' => 'Best Earn Service Providers ',
+    'order_statics'   => 'Order Statics',
+    'users_statics'   => 'Users Statics',
+    'city' => 'City',
+    'orders_number' => 'Orders Number',
+    'total_income' => 'Total Income',
+    'customers_number'         => 'Customers Number',
+    'service_providers_number' => 'Service Providers Number'
+
+
+
 ];

@@ -18,7 +18,14 @@ return [
     'total_orders'            => 'عدد الطلبات',
     'total_month_orders'      => 'عدد طلبات الشهر',
     'close_orders'            => 'عدد الطلبات المغلقة',
-    'open_orders'             => 'عدد الطلبات المفتوحة'
-
+    'open_orders'             => 'عدد الطلبات المفتوحة',
+    'best_service_providers'      => 'أفضل مزودين الخدمات',
+    'best_earn_service_providers' => 'أكثر مزودين الخدمات دخلاٌ',
+    'order_statics'              => 'إحصائيات الطلبات',
+    'users_statics'              => 'إحصائيات المستخدمين',
+    'city' => 'المدينة',
+    'orders_number' => 'عدد الطلبات',
+    'total_income'  => 'مجموع الربح',
+    'customers_number'  => 'عدد الزبائن',
+    'service_providers_number'  => 'عدد مزودي الخدمات'
 ];
-   
