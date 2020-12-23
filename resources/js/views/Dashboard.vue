@@ -1,58 +1,111 @@
 <template>
-  <div class="col-md-12">
+  <widget>
     <div class="mb-4 col-3">
       <label v-text="trans('common.countries')"></label>
       <v-select
         v-model="selectedCountry"
         :reduce="(country) => country.id"
         label="name"
-        :options="countries"
+        :options="review.countries"
       />
     </div>
 
     <div class="row mb-4">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        :title="trans('common.total_income')"
+        :body="review.cards.total_income"
+        type="bg-primary"
+      />
+      <Card
+        :title="trans('common.total_month_income')"
+        :body="review.cards.total_month_income"
+        type="bg-primary"
+      />
+      <Card
+        :title="trans('common.total_service_providers')"
+        :body="review.cards.total_service_providers"
+        type="bg-primary"
+      />
+      <Card
+        :title="trans('common.total_customers')"
+        :body="review.cards.total_customers"
+        type="bg-primary"
+      />
     </div>
     <div class="row">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        :title="trans('common.total_orders')"
+        :body="review.cards.total_customers"
+        type="bg-primary"
+      />
+      <Card
+        :title="trans('common.total_month_orders')"
+        :body="review.cards.total_month_orders"
+        type="bg-primary"
+      />
+      <Card
+        :title="trans('common.close_orders')"
+        :body="review.cards.close_orders"
+        type="bg-primary"
+      />
+      <Card
+        :title="trans('common.open_orders')"
+        :body="review.cards.open_orders"
+        type="bg-primary"
+      />
     </div>
-  </div>
+  </widget>
 </template>
 
 <script>
 import Card from "../components/card";
 import axios from "axios";
 import "vue-select/dist/vue-select.css";
+import Widget from "../components/Widget.vue";
 
 export default {
   data() {
     return {
-      countries: [],
-      selectedCountry: null,
+      review: {
+        countries: [],
+        cards: {},
+      },
+      selectedCountry: "*",
     };
   },
   components: {
     Card,
+    Widget,
   },
   methods: {
-    getCountries() {
-      axios.get(route("vue.home")).then((res) => {
-        const countries = res.data.data;
-
-        countries.push({ id: -1, name: this.trans("common.all") });
-
-        this.countries = countries;
-      });
+    getReview() {
+      axios
+        .get(
+          route("vue.home", {
+            _query: {
+              country: this.selectedCountry,
+            },
+          })
+        )
+        .then((res) => {
+          this.review = res.data.data;
+          this.review.countries.push({
+            id: "*",
+            name: this.trans("common.all"),
+          });
+        });
     },
   },
+  watch: {
+    selectedCountry: function(value){
+      if(value == null){
+        this.selectedCountry = '*';
+      }
+      this.getReview()
+    }
+  },
   mounted() {
-    this.getCountries();
+    this.getReview();
   },
 };
 </script>
