@@ -2334,6 +2334,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2353,12 +2371,30 @@ __webpack_require__.r(__webpack_exports__);
       selectedCountry: "*",
       selectedCountryLat: 23.8859,
       selectedCountryLng: 45.0792,
+      pieSeries: [44, 55, 13, 43, 22],
+      pieChartOptions: {
+        chart: {
+          type: "pie"
+        },
+        labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: "bottom"
+            }
+          }
+        }]
+      },
       options: {
         xaxis: {
           categories: [2016, 2017, 2018, 2019, 2020, 2020]
         },
         title: {
-          text: 'chart',
+          text: "chart",
           align: "left"
         }
       },
@@ -2366,19 +2402,7 @@ __webpack_require__.r(__webpack_exports__);
         name: "Customers",
         data: [30, 40, 45, 50, 49, 60, 70, 91]
       }],
-      markers: [{
-        lat: 22.8859,
-        lng: 45.0792,
-        icon: this.greenIcon()
-      }, {
-        lat: 21.8859,
-        lng: 45.0792,
-        icon: this.greenIcon()
-      }, {
-        lat: 20.8859,
-        lng: 45.0792,
-        icon: this.greenIcon()
-      }]
+      markers: []
     };
   },
   methods: {
@@ -2394,20 +2418,33 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
-    getAddressMarkers: function getAddressMarkers() {},
-    getServiceProvidersMarkers: function getServiceProvidersMarkers() {},
-    getCitiesFromCountry: function getCitiesFromCountry(countryId) {
+    getAddressMarkers: function getAddressMarkers() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(route("vue.countries.cities", countryId)).then(function (res) {
-        _this2.cities = res.data.data;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(route("vue.addresses.index")).then(function (res) {
+        _this2.markers = res.data.data;
+      });
+    },
+    getServiceProvidersMarkers: function getServiceProvidersMarkers() {
+      var _this3 = this;
 
-        _this2.cities.push({
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(route("vue.serviceProviders.index")).then(function (res) {
+        console.log(res.data.data);
+        _this3.markers = _this3.markers.concat(res.data.data);
+      });
+    },
+    getCitiesFromCountry: function getCitiesFromCountry(countryId) {
+      var _this4 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(route("vue.countries.cities", countryId)).then(function (res) {
+        _this4.cities = res.data.data;
+
+        _this4.cities.push({
           id: "*",
-          name: _this2.trans("common.all")
+          name: _this4.trans("common.all")
         });
 
-        _this2.selectedCity = "*";
+        _this4.selectedCity = "*";
       });
     }
   },
@@ -2438,6 +2475,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getCountries();
+    this.getAddressMarkers();
+    this.getServiceProvidersMarkers();
   }
 });
 
@@ -11528,7 +11567,47 @@ var render = function() {
         })
       ],
       1
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "my-3 row" }, [
+      _c(
+        "div",
+        { staticClass: "col-4" },
+        [
+          _c("apexchart", {
+            attrs: {
+              type: "pie",
+              width: "380",
+              options: _vm.pieChartOptions,
+              series: _vm.pieSeries
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-4" },
+        [
+          _c("apexchart", {
+            attrs: { type: "line", options: _vm.options, series: _vm.series }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-4" },
+        [
+          _c("apexchart", {
+            attrs: { type: "bar", options: _vm.options, series: _vm.series }
+          })
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -26378,23 +26457,19 @@ Vue.prototype.trans = function (string, args) {
 
 
 Vue.use(vue_apexcharts__WEBPACK_IMPORTED_MODULE_2___default.a);
-Vue.component('apexchart', vue_apexcharts__WEBPACK_IMPORTED_MODULE_2___default.a); //google maps icons for markers
-
-Vue.prototype.greenIcon = function () {
-  return '/markers/marker4.png';
-};
-
-Vue.prototype.orangeIcon = function () {
-  return '/markers/marker4.png';
-};
-
-Vue.prototype.cyanIcon = function () {
-  return '/markers/marker4.png';
-};
-
-Vue.prototype.purpleIcon = function () {
-  return '/markers/marker4.png';
-};
+Vue.component('apexchart', vue_apexcharts__WEBPACK_IMPORTED_MODULE_2___default.a); // //google maps icons for markers
+// Vue.prototype.greenIcon = function () {
+//   return '/markers/marker4.png';
+// }
+// Vue.prototype.orangeIcon = function () {
+//   return '/markers/marker4.png';
+// }
+// Vue.prototype.cyanIcon = function () {
+//   return '/markers/marker4.png';
+// }
+// Vue.prototype.purpleIcon = function () {
+//   return '/markers/marker4.png';
+// }
 
 Vue.component('v-select', vue_select__WEBPACK_IMPORTED_MODULE_0___default.a);
 Vue.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_1__, {

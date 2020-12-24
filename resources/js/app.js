@@ -22,22 +22,22 @@ Vue.component('apexchart', VueApexCharts)
 
 
 
-//google maps icons for markers
-Vue.prototype.greenIcon = function () {
-  return '/markers/marker4.png';
-}
+// //google maps icons for markers
+// Vue.prototype.greenIcon = function () {
+//   return '/markers/marker4.png';
+// }
 
-Vue.prototype.orangeIcon = function () {
-  return '/markers/marker4.png';
-}
+// Vue.prototype.orangeIcon = function () {
+//   return '/markers/marker4.png';
+// }
 
-Vue.prototype.cyanIcon = function () {
-  return '/markers/marker4.png';
-}
+// Vue.prototype.cyanIcon = function () {
+//   return '/markers/marker4.png';
+// }
 
-Vue.prototype.purpleIcon = function () {
-  return '/markers/marker4.png';
-}
+// Vue.prototype.purpleIcon = function () {
+//   return '/markers/marker4.png';
+// }
 
 Vue.component('v-select', vSelect)
 Vue.use(VueGoogleMaps, {

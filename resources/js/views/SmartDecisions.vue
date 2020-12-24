@@ -38,8 +38,26 @@
     <div class="my-3">
       <apexchart type="line" :options="options" :series="series"></apexchart>
     </div>
-     <div class="my-3">
+    <div class="my-3">
       <apexchart type="line" :options="options" :series="series"></apexchart>
+    </div>
+    <div class="my-3 row">
+      <div class="col-4">
+        <apexchart
+          type="pie"
+          width="380"
+          :options="pieChartOptions"
+          :series="pieSeries"
+        ></apexchart>
+      </div>
+
+      <div class="col-4">
+        <apexchart type="line" :options="options" :series="series"></apexchart>
+      </div>
+
+      <div class="col-4">
+        <apexchart type="bar" :options="options" :series="series"></apexchart>
+      </div>
     </div>
   </widget>
 </template>
@@ -64,12 +82,32 @@ export default {
       selectedCountry: "*",
       selectedCountryLat: 23.8859,
       selectedCountryLng: 45.0792,
+      pieSeries: [44, 55, 13, 43, 22],
+      pieChartOptions: {
+        chart: {
+          type: "pie",
+        },
+        labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        ],
+      },
       options: {
         xaxis: {
-          categories: [2016,2017,2018,2019,2020,2020],
+          categories: [2016, 2017, 2018, 2019, 2020, 2020],
         },
         title: {
-          text: 'chart',
+          text: "chart",
           align: "left",
         },
       },
@@ -79,23 +117,7 @@ export default {
           data: [30, 40, 45, 50, 49, 60, 70, 91],
         },
       ],
-      markers: [
-        {
-          lat: 22.8859,
-          lng: 45.0792,
-          icon: this.greenIcon(),
-        },
-        {
-          lat: 21.8859,
-          lng: 45.0792,
-          icon: this.greenIcon(),
-        },
-        {
-          lat: 20.8859,
-          lng: 45.0792,
-          icon: this.greenIcon(),
-        },
-      ],
+      markers: [],
     };
   },
   methods: {
@@ -108,8 +130,17 @@ export default {
         });
       });
     },
-    getAddressMarkers() {},
-    getServiceProvidersMarkers() {},
+    getAddressMarkers() {
+      axios.get(route("vue.addresses.index")).then((res) => {
+        this.markers = res.data.data;
+      });
+    },
+    getServiceProvidersMarkers() {
+      axios.get(route("vue.serviceProviders.index")).then((res) => {
+        console.log(res.data.data);
+        this.markers =  this.markers.concat(res.data.data);
+      });
+    },
     getCitiesFromCountry(countryId) {
       axios.get(route("vue.countries.cities", countryId)).then((res) => {
         this.cities = res.data.data;
@@ -145,6 +176,8 @@ export default {
   },
   created() {
     this.getCountries();
+    this.getAddressMarkers();
+    this.getServiceProvidersMarkers();
   },
 };
 </script>

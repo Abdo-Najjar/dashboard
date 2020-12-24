@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Vue\CountryCountroller;
-use App\Http\Controllers\Vue\DashboardController;
+use App\Http\Controllers\Vue\{CountryCountroller,DashboardController, AddressController , ServiceProviderController};
 use Illuminate\Support\Facades\Route;
 
 Route::name('vue.')->middleware('auth')->prefix('api')->group(function () {
@@ -13,5 +12,9 @@ Route::name('vue.')->middleware('auth')->prefix('api')->group(function () {
 
     Route::get('countries/{country}/cities', [CountryCountroller::class , 'cities'])->name('countries.cities');
 
-    // Route::get('addresses' , [])->name('addresses.index');
+    Route::get('addresses' , [AddressController::class , 'index'])->name('addresses.index');
+
+    
+    Route::get('serviceProviders' , [ServiceProviderController::class , 'index'])->name('serviceProviders.index');
 });
+
