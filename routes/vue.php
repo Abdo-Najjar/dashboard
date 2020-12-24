@@ -14,7 +14,6 @@ Route::name('vue.')->middleware('auth')->prefix('api')->group(function () {
 
     Route::get('addresses' , [AddressController::class , 'index'])->name('addresses.index');
 
-    
     Route::get('serviceProviders' , [ServiceProviderController::class , 'index'])->name('serviceProviders.index');
 });
 

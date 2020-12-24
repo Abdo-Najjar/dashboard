@@ -11,22 +11,23 @@
                     <div>
                         <form id="search_form">
                             <div class="form-row">
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <label for="name">{{ trans('common.name') }}</label>
-                                    <input type="text" class="form-control" id="name" placeholder="{{ trans('common.name') }}">
+                                    <input type="text" class="form-control" id="name"
+                                        placeholder="{{ trans('common.name') }}">
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <label for="status">@lang('common.status')</label>
                                     <select class="form-control select2-hidden-accessible basic" id="status" tabindex="-1"
                                         aria-hidden="true">
-                                        <option selected value="">Choose..</option>
+                                        <option selected value="">@lang('common.all')</option>
                                         <option value="1">Active</option>
                                         <option value="0">Inactive</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3 align-self-end">
-                                    <input type="submit" id="search_btn" class="btn btn-info mb-4" value="Search">
-                                    <input type="submit" id="clear_btn" class="btn btn-primary mb-4" value="Clear search">
+                                <div class="form-group col-md-4 my-auto">
+                                    <input type="submit" id="search_btn" class="btn btn-info" value="Search">
+                                    <input type="submit" id="clear_btn" class="btn btn-primary" value="Clear search">
                                 </div>
                             </div>
                         </form>
@@ -49,7 +50,7 @@
             <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                 <div class="widget-content widget-content-area br-6">
                     <div class="table-responsive mb-4 mt-4">
-                        <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
+                        <table id="data-table" class="table table-hover non-hover" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -59,6 +60,7 @@
                                     <th>currency(ar)</th>
                                     <th>currency(en)</th>
                                     <th>Tax</th>
+                                    <th>image</th>
                                     <th>Status</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
@@ -71,28 +73,41 @@
         </div>
     </div>
 @endsection
-
+<img src="" alt="">
 
 @push('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/datatables.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_html5.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/dt-global_style.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset(config('app.diraction') . '/plugins/table/datatable/datatables.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset(config('app.diraction') . '/plugins/table/datatable/custom_dt_html5.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset(config('app.diraction') . '/plugins/table/datatable/dt-global_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset(config('app.diraction') . '/plugins/select2/select2.min.css') }}">
 @endpush
 
 @push('js')
-    <script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
-    <script src="{{ asset('plugins/table/datatable/button-ext/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('plugins/table/datatable/button-ext/jszip.min.js') }}"></script>
-    <script src="{{ asset('plugins/table/datatable/button-ext/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('plugins/table/datatable/button-ext/buttons.print.min.js') }}"></script>
+    <script src="{{ asset(config('app.diraction') . '/plugins/table/datatable/datatables.js') }}"></script>
+    <script src="{{ asset(config('app.diraction') . '/plugins/table/datatable/button-ext/dataTables.buttons.min.js') }}">
+    </script>
+
+    <script src="{{ asset(config('app.diraction') . '/plugins/table/datatable/button-ext/jszip.min.js') }}"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js'></script>
+    <script src="{{ asset(config('app.diraction') . '/plugins/table/datatable/button-ext/buttons.html5.min.js') }}">
+    </script>
+    <script src="{{ asset(config('app.diraction') . '/plugins/table/datatable/button-ext/buttons.print.min.js') }}">
+    </script>
+    <script src="{{ asset(config('app.diraction') . '/plugins/select2/select2.min.js') }}"></script>
     <script>
-        const dataTable = $('#html5-extension').DataTable({
+        const dataTable = $('#data-table').DataTable({
             processing: true,
             serverSide: true,
             ajax: {
+                url: "{{ route('datatable.countries') }}",
                 data: function(d) {
                     d.status = $('#status').val(),
-                    d.name = $('#name').val()
+                        d.name = $('#name').val()
                 },
             },
             dom: '<"row"<"col-md-12"<"row"<"col-md-2"l><"col-md-4"B> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
@@ -136,6 +151,10 @@
                     name: 'tax'
                 },
                 {
+                    data: 'image',
+                    name: 'image'
+                },
+                {
                     data: 'status',
                     name: 'status',
                     orderable: false,
@@ -156,14 +175,16 @@
                 }
             ],
             buttons: {
-                buttons: [{
-                        extend: 'csv',
-                        className: 'btn'
-                    },
+                buttons: [
                     {
                         extend: 'excel',
+                        className: 'btn btn-success'
+                    },
+                    {
+                        extend: 'pdf',
                         className: 'btn'
                     },
+
                     {
                         extend: 'print',
                         className: 'btn'
@@ -192,8 +213,10 @@
         document.querySelector('#status').onchange = function() {
             dataTable.draw();
         }
+
         $(".basic").select2({
             tags: true,
         });
+
     </script>
 @endpush

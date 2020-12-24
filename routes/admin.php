@@ -11,12 +11,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
 
     Route::get('smartDecisions', [DashboardController::class , 'smartDecisions'])->name('smartDecisions');
     
-    Route::get('countries', [CountryController::class , 'index'])->name('countries.index');
-
-    Route::get('countries/create', [CountryController::class , 'index'])->name('countries.create');
-    
-    Route::get('countries/{country}/edit', [CountryController::class , 'index'])->name('countries.edit');
-
+    Route::resource('countries',CountryController::class );
 
     Route::get('cities', [CityController::class , 'index'])->name('cities.index');
 });

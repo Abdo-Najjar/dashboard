@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Vue;
 
-use App\Country;
+use App\Models\Country;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\Country\GeneralResource as CountryResource;

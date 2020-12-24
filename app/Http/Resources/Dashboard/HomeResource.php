@@ -2,14 +2,14 @@
 
 namespace App\Http\Resources\Dashboard;
 
-use App\City;
-use App\Country;
+use App\Models\City;
+use App\Models\Country;
 use App\Http\Resources\Country\GeneralResource as CountryResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\ServiceProivder\Dashboard\ViewResource as ServiceProviderResource;
 use App\Http\Resources\City\Dashboard\OrderStaticsResource;
 use App\Http\Resources\City\Dashboard\UsersStaticsResource;
-use App\ServiceProvider;
+use App\Models\ServiceProvider;
 
 class HomeResource extends JsonResource
 {

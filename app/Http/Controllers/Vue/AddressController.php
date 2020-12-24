@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Vue;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Address\LocationResource;
-use App\Address;
+use App\Models\Address;
 
 class AddressController extends Controller
 {

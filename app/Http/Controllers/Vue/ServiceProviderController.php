@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Vue;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ServiceProvider\Analytics\LocationResource;
-use App\ServiceProvider;
+use App\Models\ServiceProvider;
 
 class ServiceProviderController extends Controller
 {

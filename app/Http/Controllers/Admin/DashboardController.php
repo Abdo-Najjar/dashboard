@@ -12,8 +12,6 @@ class DashboardController extends Controller
         $data = [
             'category_name' => 'dashboard',
             'page_name' => 'analytics',
-            'has_scrollspy' => 0,
-            'scrollspy_offset' => '',
         ];
 
         return view('dashboard')->with($data);
@@ -24,8 +22,6 @@ class DashboardController extends Controller
         $data = [
             'category_name' => 'smartDecisions',
             'page_name' => 'analytics',
-            'has_scrollspy' => 0,
-            'scrollspy_offset' => '',
         ];
 
         return view('smartDecisions')->with($data);
