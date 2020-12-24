@@ -12,4 +12,6 @@ Route::name('vue.')->middleware('auth')->prefix('api')->group(function () {
     Route::get('countries', [CountryCountroller::class , 'index'])->name('countries.index');
 
     Route::get('countries/{country}/cities', [CountryCountroller::class , 'cities'])->name('countries.cities');
+
+    // Route::get('addresses' , [])->name('addresses.index');
 });

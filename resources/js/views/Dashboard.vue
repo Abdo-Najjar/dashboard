@@ -80,7 +80,7 @@ orders_statuses -->
             <th v-text="trans('common.number')"></th>
             <th v-text="trans('common.type')" ></th>
           </tr>
-          
+
           <tr v-for="(item, index) in review.orders_statuses" :key="index">
             <td>{{ item.count }}</td>
             <td>{{ item.name }}</td>
@@ -190,15 +190,6 @@ export default {
         )
         .then((res) => {
           this.review = res.data.data;
-
-
-            console.log(res.data.data.today_summary);
-
-          // .forEach(element => {
-          //     console.log(element);
-          // });
-
-
           this.review.countries.push({
             id: "*",
             name: this.trans("common.all"),

@@ -9,14 +9,35 @@ require('./bootstrap');
 window.Vue = require('vue');
 import vSelect from 'vue-select'
 import * as VueGoogleMaps from 'vue2-google-maps'
+import VueApexCharts from 'vue-apexcharts'
 
 // translation support
 Vue.prototype.trans = (string, args) => {
-    return window.translate(string, args);
+  return window.translate(string, args);
 };
 
+// charts
+Vue.use(VueApexCharts)
+Vue.component('apexchart', VueApexCharts)
 
-//components
+
+
+//google maps icons for markers
+Vue.prototype.greenIcon = function () {
+  return '/markers/marker4.png';
+}
+
+Vue.prototype.orangeIcon = function () {
+  return '/markers/marker4.png';
+}
+
+Vue.prototype.cyanIcon = function () {
+  return '/markers/marker4.png';
+}
+
+Vue.prototype.purpleIcon = function () {
+  return '/markers/marker4.png';
+}
 
 Vue.component('v-select', vSelect)
 Vue.use(VueGoogleMaps, {
@@ -28,6 +49,8 @@ Vue.component('dashboard-vue', require('./views/Dashboard.vue').default);
 Vue.component('smart-decisions-vue', require('./views/SmartDecisions.vue').default);
 
 
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -35,5 +58,5 @@ Vue.component('smart-decisions-vue', require('./views/SmartDecisions.vue').defau
  */
 
 const app = new Vue({
-    el: '#content',
+  el: '#content',
 });
