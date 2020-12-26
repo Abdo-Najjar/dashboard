@@ -49,6 +49,11 @@ Route::patch('active/{model}' , [Controller::class , 'activateMany'])->name('mod
 Route::delete('destroy/{model}' , [Controller::class , 'destroyMany'])->name('models.destroy');
 
 
+Route::get('/test' , function(){
+    return view('index');
+});
+
+
 Auth::routes();
 
 Route::get('/register', function () {
