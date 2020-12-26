@@ -3,29 +3,27 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Str;
-use App\Models\City;
 use App\Models\Country;
+use App\Models\Service;
 use Yajra\DataTables\Facades\DataTables;
 
-class CityController extends Controller
+class MainServiceController extends Controller
 {
     protected $model_plural;
 
-    protected $model = City::class;
+    protected $model = Service::class;
 
     protected $data = [
-        'category_name' => 'locations',
-        'page_name'     => 'city',
+        'category_name' => 'services',
+        'page_name'     => 'main_service',
     ];
 
     protected $breadcrumb;
 
     public function __construct()
     {
-        $this->model_plural = Str::plural(strtolower(class_basename($this->model)));
-
-        $this->data['countries'] = Country::all();
+        $this->model_plural = 'mainServices';
+        $this->data['countries']  = Country::all();
     }
 
     public function index()
@@ -40,16 +38,17 @@ class CityController extends Controller
     }
 
 
-    public function edit(City $city)
+    public function edit(Service $service)
     {
-        return view("pages.{$this->model_plural}.edit", compact('city'))->with($this->data);
+        return view("pages.{$this->model_plural}.edit", compact('service'))->with($this->data);
     }
 
     public function datatable()
     {
         return DataTables::of(
-            $this->model::select(['id', 'name->en as name_en', 'name->ar as name_ar',  'country_id' ,'status'])
+            $this->model::select(['id', 'name->en as name_en', 'name->ar as name_ar',  'country_id', 'status'])->where('type' , Service::MAIN_SERVICE)
         )
+
             ->addColumn('action', function ($object) {
 
                 return '
@@ -60,12 +59,16 @@ class CityController extends Controller
                     <button class="btn btn-sm btn-danger mx-1" data-id="' . $object->id . '">' . trans('common.delete') . '</button>
                   </div>';
             })
-            ->addColumn('country', function($object){
+            ->addColumn('country', function ($object) {
                 return  $object->country->name;
+            })
+            ->addColumn('image', function ($object) {
+                return  "<img src='{$object->image()}'>";
             })
             ->addColumn('status', function ($object) {
                 return $object->status;
             })
+            ->rawColumns(['image', 'action'])
             ->filter(function ($query) {
 
                 if (request()->name) {
@@ -84,9 +87,9 @@ class CityController extends Controller
             ->toJson();
     }
 
-    public function destroy(City $city)
+    public function destroy(Service $service)
     {
-        $city->delete();
+        $service->delete();
 
         return response()->json(['message' => trans('common.deleted')]);
     }

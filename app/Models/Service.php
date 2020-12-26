@@ -67,7 +67,7 @@ class Service extends Model implements HasMedia
      */
     public function service()
     {
-        return $this->belongsTo(Service::class, 'service_id');
+        return $this->belongsTo(Service::class);
     }
 
     /** 
@@ -77,4 +77,13 @@ class Service extends Model implements HasMedia
     {
         return $this->hasMany(Order::class);
     }
+
+    /**
+     * Service belongs to country.
+     */
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
 }

@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\{DashboardController, CountryController , CityController};
+use App\Http\Controllers\Admin\{CategoryController, DashboardController, CountryController , CityController, MainServiceController , RequiredWorkController};
 use Illuminate\Support\Facades\Route;
-
 
 
 Route::prefix('admin')->middleware(['auth'])->group(function(){
@@ -13,5 +12,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     
     Route::resource('countries',CountryController::class );
 
-    Route::get('cities', [CityController::class , 'index'])->name('cities.index');
+    Route::resource('cities', CityController::class );
+
+    Route::resource('mainServices'  , MainServiceController::class);
+
+    Route::resource('categories'  , CategoryController::class);
+
+    Route::resource('requiredWorks'  , RequiredWorkController::class);
 });

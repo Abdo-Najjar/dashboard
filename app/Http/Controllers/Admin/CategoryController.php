@@ -3,29 +3,28 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Str;
-use App\Models\City;
 use App\Models\Country;
+use App\Models\Service;
+use Yajra\DataTables\Contracts\DataTable;
 use Yajra\DataTables\Facades\DataTables;
 
-class CityController extends Controller
+class CategoryController extends Controller
 {
     protected $model_plural;
 
-    protected $model = City::class;
+    protected $model = Service::class;
 
     protected $data = [
-        'category_name' => 'locations',
-        'page_name'     => 'city',
+        'category_name' => 'services',
+        'page_name'     => 'category',
     ];
 
     protected $breadcrumb;
 
     public function __construct()
     {
-        $this->model_plural = Str::plural(strtolower(class_basename($this->model)));
-
-        $this->data['countries'] = Country::all();
+        $this->model_plural = 'categories';
+        $this->data['countries']  = Country::all();
     }
 
     public function index()
@@ -40,32 +39,38 @@ class CityController extends Controller
     }
 
 
-    public function edit(City $city)
+    public function edit(Service $service)
     {
-        return view("pages.{$this->model_plural}.edit", compact('city'))->with($this->data);
+        return view("pages.{$this->model_plural}.edit", compact('service'))->with($this->data);
     }
 
     public function datatable()
     {
         return DataTables::of(
-            $this->model::select(['id', 'name->en as name_en', 'name->ar as name_ar',  'country_id' ,'status'])
+            $this->model::select(['id', 'name->en as name_en', 'name->ar as name_ar', 'service_id' ,'country_id', 'status'])->where('type' , Service::Category)
         )
-            ->addColumn('action', function ($object) {
 
+            ->addColumn('action', function ($object) {
                 return '
-                
                 <div class="btn-group">
                     <a class="btn btn-sm btn-info mx-1" href="' . route($this->model_plural . '.show', $object) . '" >' . trans('common.show') . '</a>
                     <a class="btn btn-sm btn-primary mx-1" href="' . route($this->model_plural . '.edit', $object) . '">' . trans('common.edit') . '</a>
                     <button class="btn btn-sm btn-danger mx-1" data-id="' . $object->id . '">' . trans('common.delete') . '</button>
                   </div>';
             })
-            ->addColumn('country', function($object){
-                return  $object->country->name;
+            ->addColumn('country', function ($object) {
+                return  optional($object->country)->name;
+            })
+            ->addColumn('main_service' , function($object){
+                return optional($object->service)->name;
+            })
+            ->addColumn('image', function ($object) {
+                return  "<img src='{$object->image()}'>";
             })
             ->addColumn('status', function ($object) {
                 return $object->status;
             })
+            ->rawColumns(['image', 'action'])
             ->filter(function ($query) {
 
                 if (request()->name) {
@@ -84,10 +89,11 @@ class CityController extends Controller
             ->toJson();
     }
 
-    public function destroy(City $city)
+    public function destroy(Service $service)
     {
-        $city->delete();
+        $service->delete();
 
         return response()->json(['message' => trans('common.deleted')]);
     }
+
 }

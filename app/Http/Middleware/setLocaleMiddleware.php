@@ -17,7 +17,6 @@ class setLocaleMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        
         if((request()->has('diraction') and request()->diraction == 'rtl') or session('diraction') == 'rtl'){
             Config::set('app.diraction' , 'rtl');
             Config::set('app.locale' , 'ar');

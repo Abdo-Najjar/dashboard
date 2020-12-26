@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\Country\GeneralResource as CountryResource;
 use App\Http\Resources\City\GeneralResource as CityResource;
+use App\Http\Requests\Country\ValidateRequest;
 
 class CountryCountroller extends Controller
 {
@@ -32,12 +33,12 @@ class CountryCountroller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param ValidateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidateRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

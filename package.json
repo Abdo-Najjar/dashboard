@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "apexcharts": "^3.23.0",
+        "sweetalert2": "^10.12.6",
         "turbolinks": "^5.2.0",
         "vue-apexcharts": "^1.6.0",
         "vue-select": "^3.11.2",

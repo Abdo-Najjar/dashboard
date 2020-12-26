@@ -22,10 +22,10 @@ Vue.component('apexchart', VueApexCharts)
 
 
 
-// //google maps icons for markers
-// Vue.prototype.greenIcon = function () {
-//   return '/markers/marker4.png';
-// }
+//google maps icons for markers
+Vue.prototype.icon = function () {
+  return '/markers/marker1.png';
+}
 
 // Vue.prototype.orangeIcon = function () {
 //   return '/markers/marker4.png';
@@ -48,7 +48,12 @@ Vue.use(VueGoogleMaps, {
 Vue.component('dashboard-vue', require('./views/Dashboard.vue').default);
 Vue.component('smart-decisions-vue', require('./views/SmartDecisions.vue').default);
 
+// country
+Vue.component('create-country-vue', require('./views/countries/create.vue').default);
 
+// commen 
+Vue.component('widget', require('./components/Widget.vue').default);
+Vue.component('icon', require('./components/Icon.vue').default);
 
 
 /**

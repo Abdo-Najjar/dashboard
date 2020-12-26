@@ -9,6 +9,8 @@ Route::name('vue.')->middleware('auth')->prefix('api')->group(function () {
     Route::get('dashboard/home', [DashboardController::class , 'home'])->name('home');
 
     Route::get('countries', [CountryCountroller::class , 'index'])->name('countries.index');
+    
+    Route::post('countries', [CountryCountroller::class , 'store'])->name('countries.store');
 
     Route::get('countries/{country}/cities', [CountryCountroller::class , 'cities'])->name('countries.cities');
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6173ded3993e595a266357e5160bf892",
+    "content-hash": "0f99bf1340d88ac8ea9da827208c7225",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -913,16 +913,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.19.0",
+            "version": "v8.20.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f5f331cee60f1bbe672503b7eb9ba5b22b2ceacb"
+                "reference": "b5d8573ab16027867eaa1ac148893833434f9b02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f5f331cee60f1bbe672503b7eb9ba5b22b2ceacb",
-                "reference": "f5f331cee60f1bbe672503b7eb9ba5b22b2ceacb",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b5d8573ab16027867eaa1ac148893833434f9b02",
+                "reference": "b5d8573ab16027867eaa1ac148893833434f9b02",
                 "shasum": ""
             },
             "require": {
@@ -1072,7 +1072,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-12-15T16:16:31+00:00"
+            "time": "2020-12-22T21:21:19+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2596,6 +2596,74 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "rennokki/rating",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/renoki-co/rating.git",
+                "reference": "f6c4a541e3d4294d76807880702ddbf3f4354adb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/renoki-co/rating/zipball/f6c4a541e3d4294d76807880702ddbf3f4354adb",
+                "reference": "f6c4a541e3d4294d76807880702ddbf3f4354adb",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.1",
+                "mockery/mockery": "^1.4",
+                "orchestra/database": "^5.0|^6.0",
+                "orchestra/testbench": "^5.0|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rennokki\\Rating\\RatingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rennokki\\Rating\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Renoki",
+                    "email": "alex@renoki.org",
+                    "homepage": "https://github.com/rennokki",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Eloquent Rating allows you to assign ratings to any model.",
+            "homepage": "https://github.com/renoki-co/rating",
+            "keywords": [
+                "Rate",
+                "Rating",
+                "eloquent",
+                "laravel",
+                "model",
+                "star",
+                "stars",
+                "system"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/renoki-co",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-20T08:38:23+00:00"
         },
         {
             "name": "spatie/image",

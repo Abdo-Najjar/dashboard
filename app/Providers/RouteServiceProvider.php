@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Country;
+use App\Models\Service;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +32,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
+        Route::model('mainService' , Service::class);
+        Route::model('category' , Service::class);
+        Route::model('requiredWork' , Service::class);
 
         parent::boot();
     }
@@ -66,7 +71,7 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
 
-            Route::middleware('web')
+        Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/datatable.php'));
 

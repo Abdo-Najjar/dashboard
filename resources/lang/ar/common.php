@@ -44,5 +44,36 @@ return [
     'canceled'        => 'ملغي',
 
     'number'          => 'العدد',
-    'type'                => 'النوع'
+    'type'            => 'النوع',
+    'active'          => 'مفعل',
+    'inactive'        => 'غير مفعل',
+
+    'clear_search'  => 'إلغاء البحث',
+    'create'  => 'إنشاء',
+    'activate'  => 'تفعيل',
+    'deactivate'  => ' تثبيط',
+    'delete'  => 'حذف',
+
+    'updated'   => 'تم التعديل بنجاح',
+    'deleted'   => 'تم الحذف بنجاح',
+
+    'confirm'   => 'هل أنت متاكد؟',
+
+    'yes'       => 'نعم',
+    'cancel'    => 'إلغاء',
+    'show'          => 'إظهار',
+    'edit'          => 'تعديل',
+    'delete'        =>  'حذف',
+    'actions'       => 'أجراءات',
+    'id'            => 'المعرف',
+    'name_ar'       =>  '(ar) الاسم',
+    'name_en'       =>  '(en) الاسم',
+    'currency_ar'   =>  '(ar)العملة',
+    'currency_en'   =>  '(en)العملة',
+    'tax'           =>  'الضريبة',
+    'image'         =>  'الصورة',
+    'country'       => 'الدولة',
+    'main_service'  => 'الخدمات الأساسية',
+    'services'      => 'الخدمات',
+'categories'    => 'الفئات'
 ];

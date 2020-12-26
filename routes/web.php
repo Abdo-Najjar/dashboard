@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,14 @@ Route::get('js/translations.js', function () {
 })->name('translations');
 
 Route::get('lang/{diraction}', [DashboardController::class, 'setLang'])->name('lang.change');
+
+
+
+Route::patch('deactive/{model}' , [Controller::class , 'deactivateMany'])->name('models.deactive');
+
+Route::patch('active/{model}' , [Controller::class , 'activateMany'])->name('models.active');
+
+Route::delete('destroy/{model}' , [Controller::class , 'destroyMany'])->name('models.destroy');
 
 
 Auth::routes();

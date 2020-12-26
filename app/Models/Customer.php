@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Http\Traits\HasImage;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +13,7 @@ use Rennokki\Rating\Contracts\Rating;
 
 class Customer extends Authenticatable implements HasMedia, Rating
 {
-    use HasFactory, HasImage, Notifiable, SoftDeletes, HasApiTokens, Rate;
+    use HasFactory, HasImage, Notifiable, SoftDeletes, Rate;
 
 
     protected $guarded = [];

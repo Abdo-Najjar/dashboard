@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Http\Traits\HasImage;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,7 +13,7 @@ use Rennokki\Rating\Contracts\Rating;
 
 class ServiceProvider extends Authenticatable implements HasMedia, Rating
 {
-    use HasFactory, Notifiable, SoftDeletes, HasApiTokens, HasImage, Rate;
+    use HasFactory, Notifiable, SoftDeletes, HasImage, Rate;
 
 
     public const FACILITY_TYPE  = '0';

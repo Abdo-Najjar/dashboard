@@ -43,5 +43,38 @@ return [
     'canceled' => 'Canceled',
 
     'number'    => 'Number',
-    'type'      => 'Type'
+    'type'      => 'Type',
+    'active'    => 'Active',
+    'inactive'  => 'Inactive',
+
+
+    'clear_search'  => 'Clear Search',
+    'create'        => 'Create',
+    'activate'      => 'Activate',
+    'deactivate'    => 'Deactivate',
+    'delete'        => 'Delete',
+
+    'updated'       => 'Updated Successfully',
+    'deleted'       =>  'Deleted Successfully',
+    'confirm'   => 'Are you sure?',
+
+    'yes'             => 'Yes',
+    'cancel'          => 'Cancel',
+    'show'            => 'Show',
+    'edit'            => 'Edit',
+    'delete'          => 'Delete',
+    'actions'         => 'Actions',
+    'id'              => 'ID',
+    'name_ar'         => 'Name Ar',
+    'name_en'         => 'Name En',
+    'currency_ar'     => 'Currency Ar',
+    'currency_en'     => 'Currency En',
+    'tax'             => 'Tax',
+    'image'           => 'Image',
+    'country'         => 'Country',
+    'main_service'    => 'Main Service',
+    'services'        => 'Serivce',
+    'categories'      => 'Categories',
+    'required_works'  => 'Required works'
+
 ];

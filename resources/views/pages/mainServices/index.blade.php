@@ -11,12 +11,21 @@
                     <div>
                         <form id="search_form">
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="name">{{ trans('common.name') }}</label>
                                     <input type="text" class="form-control" id="name"
                                         placeholder="{{ trans('common.name') }}">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
+                                    <label for="country_id">@lang('common.country')</label>
+                                    <select class="form-control form-small" id="country_id">
+                                        <option value="">@lang('common.all')</option>
+                                        @foreach ($countries as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
                                     <label for="status">@lang('common.status')</label>
                                     <select class="form-control form-small" id="status">
                                         <option value="">@lang('common.all')</option>
@@ -24,7 +33,7 @@
                                         <option value="0">@lang('common.inactive')</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-4 my-auto">
+                                <div class="form-group col-md-3 my-auto">
                                     <input type="reset" id="clear_btn" class="btn btn-primary"
                                         value="{{ trans('common.clear_search') }}">
                                 </div>
@@ -61,9 +70,7 @@
                                     <th>@lang('common.id')</th>
                                     <th>@lang('common.name_ar')</th>
                                     <th>@lang('common.name_en')</th>
-                                    <th>@lang('common.currency_ar')</th>
-                                    <th>@lang('common.currency_en')</th>
-                                    <th>@lang('common.tax')</th>
+                                    <th>@lang('common.country')</th>
                                     <th>@lang('common.image')</th>
                                     <th>@lang('common.status')</th>
                                     <th class="text-center">@lang('common.actions')</th>
@@ -77,7 +84,6 @@
         </div>
     </div>
 @endsection
-<img src="" alt="">
 
 @push('css')
     <link rel="stylesheet" type="text/css"
@@ -111,7 +117,8 @@
                 url: "{{ route('datatable.' . $model_plural) }}",
                 data: function(d) {
                     d.status = $('#status').val(),
-                        d.name = $('#name').val()
+                        d.name = $('#name').val(),
+                        d.country_id = $('#country_id').val()
                 },
             },
             dom: '<"row"<"col-md-12"<"row"<"col-md-2"l><"col-md-4"B> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
@@ -143,16 +150,8 @@
                     name: 'name_en'
                 },
                 {
-                    data: 'currency_ar',
-                    name: 'currency_ar'
-                },
-                {
-                    data: 'currency_en',
-                    name: 'currency_en'
-                },
-                {
-                    data: 'tax',
-                    name: 'tax'
+                    data: 'country',
+                    name: 'country'
                 },
                 {
                     data: 'image',
@@ -217,9 +216,15 @@
         document.querySelector('#name').addEventListener('keyup', function() {
             dataTable.draw();
         });
+
         document.querySelector('#status').onchange = function() {
             dataTable.draw();
         }
+
+        document.querySelector('#country_id').onchange = function() {
+            dataTable.draw();
+        }
+
         document.querySelector('#clear_btn').addEventListener('click', function(p) {
             setTimeout(() => {
                 dataTable.draw();

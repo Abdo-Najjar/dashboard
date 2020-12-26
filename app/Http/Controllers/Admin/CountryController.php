@@ -5,58 +5,57 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Country;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
 
 class CountryController extends Controller
 {
+
+    protected $model_plural;
+
+    protected $model = Country::class;
+
+    protected $data = [
+        'category_name' => 'locations',
+        'page_name' => 'country',
+    ];
+
+    protected $breadcrumb;
+
+    public function __construct()
+    {
+        $this->model_plural = Str::plural(strtolower(class_basename($this->model)));
+    }
+
     public function index()
     {
-        $data = [
-            'category_name' => 'locations',
-            'page_name' => 'country',
-        ];
-
-        return view('pages.countries.index')->with($data);
+        return view("pages.{$this->model_plural}.index", ['model_plural' => $this->model_plural, 'model' => class_basename($this->model)])->with($this->data);
     }
 
 
     public function create()
     {
-        $data = [
-            'category_name' => 'locations',
-            'page_name' => 'country',
-        ];
-
-        return view('pages.countries.create')->with($data);
+        return view("pages.{$this->model_plural}.create")->with($this->data);
     }
 
 
     public function edit(Country $country)
     {
-        $data = [
-            'category_name' => 'locations',
-            'page_name' => 'country',
-        ];
-
-        return view('pages.countries.edit', compact('country'))->with($data);
+        return view("pages.{$this->model_plural}.edit", compact('country'))->with($this->data);
     }
 
     public function datatable()
     {
         return DataTables::of(
-            Country::select(['id', 'name->en as name_en', 'name->ar as name_ar', 'currency->en as currency_en', 'currency->ar as currency_ar', 'status', 'tax'])
+            $this->model::select(['id', 'name->en as name_en', 'name->ar as name_ar', 'currency->en as currency_en', 'currency->ar as currency_ar', 'status', 'tax'])
         )
             ->addColumn('action', function ($object) {
 
                 return '
+                
                 <div class="btn-group">
-                    <a href="' . route('countries.show', $object) . '" class="btn btn-sm">Open</a>
-                    <button type="button" class="btn  btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference5" style="will-change: transform;">
-                      <a class="dropdown-item " href="' . route('countries.edit', $object) . '">Edit</a>
-                      <a class="dropdown-item" href="#">Delete</a>
-                    </div>
+                    <a class="btn btn-sm btn-info mx-1" href="' . route($this->model_plural . '.show', $object) . '" >' . trans('common.show') . '</a>
+                    <a class="btn btn-sm btn-primary mx-1" href="' . route($this->model_plural . '.edit', $object) . '">' . trans('common.edit') . '</a>
+                    <button class="btn btn-sm btn-danger mx-1" data-id="' . $object->id . '">' . trans('common.delete') . '</button>
                   </div>';
             })
             ->addColumn('image', function ($object) {
@@ -65,7 +64,7 @@ class CountryController extends Controller
             ->addColumn('status', function ($object) {
                 return $object->status;
             })
-            ->rawColumns(['image','action'])
+            ->rawColumns(['image', 'action'])
             ->filter(function ($query) {
 
                 if (request()->name) {
@@ -82,5 +81,8 @@ class CountryController extends Controller
 
     public function destroy(Country $country)
     {
+        $country->delete();
+
+        return response()->json(['message' => trans('common.deleted')]);
     }
 }
