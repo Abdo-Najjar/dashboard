@@ -20,14 +20,14 @@ class CountryCountroller extends Controller
     {
         return CountryResource::collection(
             Country::orderByDesc('updated_at')->get()
-        );     
+        );
     }
 
     public function cities(Country $country)
     {
         return CityResource::collection(
-                $country->cities()->orderByDesc('updated_at')->get()
-        );     
+            $country->cities()->orderByDesc('updated_at')->get()
+        );
     }
 
     /**
@@ -38,7 +38,9 @@ class CountryCountroller extends Controller
      */
     public function store(ValidateRequest $request)
     {
-        dd($request->all());
+        Country::create($request->validated());
+
+        return response()->json(['message' => trans('common.created')]);
     }
 
     /**

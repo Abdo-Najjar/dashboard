@@ -2,164 +2,177 @@
   <widget>
     <form @submit.prevent="store">
       <div class="form-group mb-4">
-        <label for="name_ar">Name ar</label>
+        <label for="name_ar" v-text="trans('common.name_ar')"></label>
         <input
           v-model="country.name.ar"
           type="text"
           class="form-control"
           id="name_ar"
-          placeholder="Name ar"
+          :placeholder="trans('common.name_ar')"
         />
-
-        <!-- @error('name.ar')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div class="alert alert-danger m-2" v-if="errors && errors['name.ar']">
+          <span>{{ errors["name.ar"][0] }}</span>
+        </div>
       </div>
-
       <div class="form-group mb-4">
-        <label for="name_ar">Name en</label>
+        <label for="name_ar" v-text="trans('common.name_en')"></label>
         <input
           v-model="country.name.en"
           type="text"
           class="form-control"
           id="name_ar"
-          placeholder="Name en"
+          :placeholder="trans('common.name_en')"
         />
-        <!-- 
-            @error('name.en')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div class="alert alert-danger m-2" v-if="errors && errors['name.en']">
+          <span>{{ errors["name.en"][0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="currency_ar">Currency ar</label>
+        <label for="currency_ar" v-text="trans('common.currency_ar')"></label>
         <input
           v-model="country.currency.ar"
           type="text"
           class="form-control"
           id="currency_ar"
-          placeholder="Currency ar"
+          :placeholder="trans('common.currency_ar')"
         />
-        <!-- 
-            @error('currency.ar')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div
+          class="alert alert-danger m-2"
+          v-if="errors && errors['currency.ar']"
+        >
+          <span>{{ errors["currency.ar"][0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="currency_en">Currency en</label>
+        <label for="currency_en" v-text="trans('common.currency_en')"></label>
         <input
           v-model="country.currency.en"
           type="text"
           class="form-control"
           id="currency_en"
-          placeholder="Currency en"
+          :placeholder="trans('common.currency_en')"
         />
-
-        <!-- @error('currency.en')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div
+          class="alert alert-danger m-2"
+          v-if="errors && errors['currency.en']"
+        >
+          <span>{{ errors["currency.en"][0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="zip_code">Zip Code</label>
+        <label for="zip_code" v-text="trans('common.zip_code')"></label>
         <input
           v-model="country.zip_code"
           type="text"
           class="form-control"
           id="zip_code"
-          placeholder="Zip Code"
+          :placeholder="trans('common.zip_code')"
         />
-        <!-- 
-            @error('zip_code')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div class="alert alert-danger m-2" v-if="errors && errors.zip_code">
+          <span>{{ errors.zip_code[0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="tax">Tax</label>
+        <label for="tax" v-text="trans('common.tax')"></label>
         <input
           v-model="country.tax"
           type="number"
           class="form-control"
           id="tax"
           min="0"
-          placeholder="Tax"
+          :placeholder="trans('common.tax')"
         />
 
-        <!-- @error('tax')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div class="alert alert-danger m-2" v-if="errors && errors.tax">
+          <span>{{ errors.tax[0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="price_of_first_ten_kilo">Price Of First Ten Kilo</label>
+        <label
+          for="price_of_first_ten_kilo"
+          v-text="trans('common.price_of_first_ten_kilo')"
+        ></label>
         <input
           v-model="country.price_of_first_ten_kilo"
           type="number"
           class="form-control"
           id="price_of_first_ten_kilo"
           min="0"
-          placeholder="Price Of First Ten Kilo"
+          :placeholder="trans('common.price_of_first_ten_kilo')"
         />
-        <!-- 
-            @error('price_of_first_ten_kilo')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div
+          class="alert alert-danger m-2"
+          v-if="errors && errors.price_of_first_ten_kilo"
+        >
+          <span>{{ errors.price_of_first_ten_kilo[0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="price_for_kilo">Price For Kilo</label>
+        <label
+          for="price_for_kilo"
+          v-text="trans('common.price_for_kilo')"
+        ></label>
         <input
           v-model="country.price_for_kilo"
           type="number"
           class="form-control"
           id="price_for_kilo"
           min="0"
-          placeholder="Price For Kilo"
+          :placeholder="trans('common.price_for_kilo')"
         />
-        <!-- 
-            @error('price_for_kilo')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div
+          class="alert alert-danger m-2"
+          v-if="errors && errors.price_for_kilo"
+        >
+          <span>{{ errors.price_for_kilo[0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="profitRatio">Profit Ratio</label>
+        <label for="profitRatio" v-text="trans('common.profitRatio')"></label>
         <input
           v-model="country.profitRatio"
           type="number"
           class="form-control"
           id="profitRatio"
           min="0"
-          placeholder="Profit Ratio"
+          :placeholder="trans('common.profitRatio')"
         />
-
-        <!-- @error('profitRatio')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+        <div class="alert alert-danger m-2" v-if="errors && errors.profitRatio">
+          <span>{{ errors.profitRatio[0] }}</span>
+        </div>
       </div>
 
       <div class="form-group mb-4">
-        <label for="country_code ">Country Code </label>
+        <label
+          for="contact_numbe"
+          v-text="trans('common.contact_numbe')"
+        ></label>
+        <input
+          v-model="country.contact_number"
+          type="number"
+          class="form-control"
+          id="profitRatio"
+          min="0"
+          :placeholder="trans('common.contact_number')"
+        />
+        <div
+          class="alert alert-danger m-2"
+          v-if="errors && errors.contact_number"
+        >
+          <span>{{ errors.contact_number[0] }}</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="country_code" v-text="trans('common.country_code')">
+        </label>
         <select
           v-model="country.country_code"
           name="country_code "
@@ -486,13 +499,15 @@
             Wallis and Futuna
           </option>
         </select>
-        <!-- 
-            @error('country_code')
-                <div class="alert alert-danger m-2">
-                    <span>{{ $message }}</span>
-                </div>
-            @enderror -->
+
+        <div
+          class="alert alert-danger m-2"
+          v-if="errors && errors.country_code"
+        >
+          <span>{{ errors.country_code[0] }}</span>
+        </div>
       </div>
+
       <div class="mb-2">
         <GmapMap
           @click="mark"
@@ -501,22 +516,13 @@
           map-type-id="terrain"
           style="height: 300px"
         >
-          <Gmap-marker
-            :marker="marker"
-          >
+          <Gmap-marker :marker="marker">
             <img :src="marker.icon" />
           </Gmap-marker>
         </GmapMap>
       </div>
 
-
-      <input
-        type="submit"
-        class="btn btn-primary"
-        value="Create Country"
-      />
-
-
+      <input type="submit" class="btn btn-primary" :value="trans('common.create')" />
     </form>
   </widget>
 </template>
@@ -539,13 +545,31 @@ export default {
         name: {},
         currency: {},
       },
+      errors: {},
     };
   },
   methods: {
     store() {
-      axois.post(route("vue.countries.store"), this.country).then((res) => {
-        console.log(res.data);
-      });
+      axois
+        .post(route("vue.countries.store"), this.country)
+        .then((res) => {
+          swal
+            .fire({
+              position: "top-end",
+              icon: "success",
+              title: res.data.message,
+              showConfirmButton: false,
+              timer: 1500,
+            })
+            .then(() => {
+                location.href = '/admin/countries';
+            });
+        })
+        .catch((error) => {
+          if (error.response.status == 422) {
+            this.errors = error.response.data.errors;
+          }
+        });
     },
     mark(event) {
       this.marker.lat = event.latLng.lat();

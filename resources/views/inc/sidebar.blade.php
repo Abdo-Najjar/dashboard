@@ -46,10 +46,10 @@
                 </li>
 
 
-                <li onclick="location.href='{{ route('home') }}'"
-                    class="menu {{ $category_name === 'dashboard' ? 'active' : '' }}">
-                    <a href="{{ route('home') }}" data-active="{{ $category_name === 'dashboard' ? 'true' : 'false' }}"
-                        data-toggle="collapse" aria-expanded="{{ $category_name === 'dashboard' ? 'true' : 'false' }}"
+                <li onclick="location.href='{{ route('customers.index') }}'"
+                    class="menu {{ $category_name === 'customers' ? 'active' : '' }}">
+                    <a href="{{ route('home') }}" data-active="{{ $category_name === 'customers' ? 'true' : 'false' }}"
+                        data-toggle="collapse" aria-expanded="{{ $category_name === 'customers' ? 'true' : 'false' }}"
                         class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -70,10 +70,10 @@
                 </li>
 
 
-                <li onclick="location.href='{{ route('home') }}'"
+                <li onclick="location.href='{{ route('serviceProvider.index') }}'"
                     class="menu {{ $category_name === 'dashboard' ? 'active' : '' }}">
-                    <a href="{{ route('home') }}" data-active="{{ $category_name === 'dashboard' ? 'true' : 'false' }}"
-                        data-toggle="collapse" aria-expanded="{{ $category_name === 'dashboard' ? 'true' : 'false' }}"
+                    <a href="{{ route('serviceProvider.index') }}" data-active="{{ $category_name === 'serviceProvider' ? 'true' : 'false' }}"
+                        data-toggle="collapse" aria-expanded="{{ $category_name === 'serviceProvider' ? 'true' : 'false' }}"
                         class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

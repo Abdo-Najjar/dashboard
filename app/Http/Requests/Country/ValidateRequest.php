@@ -34,7 +34,7 @@ class ValidateRequest extends FormRequest
             'price_for_kilo' => 'required|numeric|integer|min:0',
             'profitRatio' => 'required|numeric|integer|min:0|max:100',
             'country_code' => 'required',
-            'contact_number' => 'required|min:9|min:11',
+            'contact_number' => 'required|min:9|max:11',
             'longitude' =>'required|numeric',
             'latitude'  =>'required|numeric'
         ];

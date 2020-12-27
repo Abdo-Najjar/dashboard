@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{CategoryController, DashboardController, CountryController, CityController, MainServiceController, RequiredWorkController};
+use App\Http\Controllers\Admin\{CategoryController, DashboardController, CountryController, CityController, CustomerController, MainServiceController, RequiredWorkController};
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +19,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('categories', CategoryController::class)->except(['store', 'update']);
 
     Route::resource('requiredWorks', RequiredWorkController::class)->except(['store', 'update']);
+  
+    Route::resource('customers', CustomerController::class)->except(['store', 'update']);
+
+    Route::resource('serviceProvider', CustomerController::class)->except(['store', 'update']);
 
     Route::get('reports/mainService');
 });

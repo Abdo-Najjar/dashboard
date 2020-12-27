@@ -15,6 +15,8 @@ class Country extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, HasTranslations, SharedScopes, HasImage;
 
+    protected $guarded = [];
+
     // Translations attributes.
     public $translatable  = ['name', 'currency'];
 

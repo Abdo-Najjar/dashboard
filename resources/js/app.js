@@ -27,18 +27,6 @@ Vue.prototype.icon = function () {
   return '/markers/marker1.png';
 }
 
-// Vue.prototype.orangeIcon = function () {
-//   return '/markers/marker4.png';
-// }
-
-// Vue.prototype.cyanIcon = function () {
-//   return '/markers/marker4.png';
-// }
-
-// Vue.prototype.purpleIcon = function () {
-//   return '/markers/marker4.png';
-// }
-
 Vue.component('v-select', vSelect)
 Vue.use(VueGoogleMaps, {
   load: {
@@ -50,6 +38,8 @@ Vue.component('smart-decisions-vue', require('./views/SmartDecisions.vue').defau
 
 // country
 Vue.component('create-country-vue', require('./views/countries/create.vue').default);
+
+Vue.component('create-city-vue', require('./views/cities/create.vue').default);
 
 // commen 
 Vue.component('widget', require('./components/Widget.vue').default);

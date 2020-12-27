@@ -83,5 +83,12 @@ return [
     'service-providers' => 'Service Providers',
     'invoices'          => 'Invoices',
     'promo_code'        =>  'Promotion code',
+    'zip_code'          => 'Zip Code',
+    'price_of_first_ten_kilo'   => 'Price Of First Ten Kilo',
+    'price_for_kilo'            => 'Price For The Kilo',
+    'profitRatio'               => 'Profit Ratio',
+    'contact_number'            => 'Contact Numbe',
+    'country_code'              => 'Country Code',
+    'created'                   => 'Created Successfully'    
 
 ];

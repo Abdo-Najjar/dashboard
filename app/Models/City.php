@@ -12,6 +12,8 @@ class City extends Model
 {
     use HasFactory, SoftDeletes, HasTranslations, SharedScopes;
 
+    protected $guarded = [];
+
     // Translations attributes.
     public $translatable  = ['name'];
 

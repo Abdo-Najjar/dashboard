@@ -83,5 +83,13 @@ return [
     'customers'         => 'الزبائن',
     'service-providers' => 'مزودي الخدمات',
     'invoices'          => 'الفواتير',
-    'promo_code'        => 'الخصومات'
+    'promo_code'        => 'الخصومات',
+    'zip_code'          => 'مقدمة الدولة',
+    'price_of_first_ten_kilo'   => 'السعر لأول عشرة كيلو',
+    'price_for_kilo'            => 'السعر للكيلو',
+    'profitRatio'               =>'نسبة الربح',
+    'contact_number'            => 'رقم الاتصال لدولة',
+    'country_code'              => 'رمز الدولة',
+    'created'                   => 'تم الإنشاء بنجاح'
+
 ];
